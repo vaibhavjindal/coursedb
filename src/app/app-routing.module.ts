@@ -6,7 +6,7 @@ import { ContributeComponent } from './contribute/contribute.component';
 import { DepartmentComponent } from './department/department.component';
 
 const routes: Routes = [
-  { path: 'department/:link', component: DepartmentComponent }
+  { path: 'department/:link', component: DepartmentComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contribute', component: ContributeComponent }
 ];
