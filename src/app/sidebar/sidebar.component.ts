@@ -10,7 +10,6 @@ import { SrvService } from '../srv.service';
 export class SidebarComponent implements OnInit {
 
   depts: Dept[];
-  selectedDept: Dept;
   
   getDepts(): void {
   this.srvService.getDepts()
@@ -23,8 +22,4 @@ export class SidebarComponent implements OnInit {
     this.getDepts();
   }
   
-  onSelect(dept: Dept): void {
-    this.selectedDept = dept;
-  }
-
 }

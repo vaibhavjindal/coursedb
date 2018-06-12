@@ -1,4 +1,3 @@
 <div class="sidenav">
-  <a *ngFor="let dept of depts" [class.selected]="dept === selectedDept" (click)="onSelect(dept)" routerLink="/department/{{dept.link}}">{{dept.name}}</a>
+  <a *ngFor="let dept of depts" routerLink="/department/{{dept.link}}">{{dept.name}}</a>
 </div>
-<app-department [dept]="selectedDept"></app-department>

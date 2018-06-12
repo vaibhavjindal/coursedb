@@ -14,4 +14,9 @@ export class SrvService {
   }
 
   constructor() { }
+
+  getDept(link: string): Observable<Dept> {
+    return of(DEPTS.find(dept => dept.link === link));
+  }
+
 }
