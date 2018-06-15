@@ -25,7 +25,15 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": ["firebase-app.js",
+              "firebase-auth.js",
+              "firebase-database.js",
+              "firebase-firestore.js",
+              "firebase-messaging.js",
+              "firebase-functions.js",
+              "firebase.js",
+              "fire_script.js"
+            ]
           },
           "configurations": {
             "production": {
