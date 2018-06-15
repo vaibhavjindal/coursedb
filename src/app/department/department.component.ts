@@ -17,10 +17,13 @@ export class DepartmentComponent implements OnInit {
   	private route: ActivatedRoute,
   	private srvService: SrvService,
   	private location: Location
-  ) {}
+  ) {
+    route.params.subscribe(val => {
+    this.getDept();
+  });
+  }
 
   ngOnInit() {
-  	this.getDept();
   }
 
   getDept(): void {
