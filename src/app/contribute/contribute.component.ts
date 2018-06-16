@@ -5,9 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contribute.component.html',
   styleUrls: ['./contribute.component.css']
 })
-export class ContributeComponent implements OnInit {
+export class ContributeComponent implements OnInit{ 
 
-  constructor() { }
+  email: string="Email";
+  constructor() {}
 
   ngOnInit() {
   }

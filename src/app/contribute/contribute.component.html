@@ -1,14 +1,9 @@
-
-<pre >
-    Department:      <input type="text" id="department"><br>
-    Course Code:     <input type="text" id="coursecode"><br>
-    Course Name:     <input type="text" id="coursename"><br>
-    Year:            <input type="text" id="year"><br>
-    Sem:             <input type="radio" id="sem" value="Odd">Odd
-                     <input type="radio" id="sem" value="Even">Even<br>
-    Your Name:       <input type="text" id="upname"><br>
-    Your designation:<input type="radio" id="des" value="Student">Student
-                     <input type="radio" id="des" value="Professor">Professor<br>
-    <button onclick="upload_data()">Upload_data</button>
-</pre>
-<p id="hello"></p>
+<h1 align="center">Verification Portal</h1>
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="email">
+    <small id="emailHelp" class="form-text text-muted">yo</small>
+  </div>
+  <button type="submit" class="btn btn-primary" routerLink="/upload-data">Send Verification e-mail</button>
+</form>
