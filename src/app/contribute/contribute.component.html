@@ -3,7 +3,7 @@
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="email">
-    <small id="emailHelp" class="form-text text-muted">yo</small>
+    <small id="emailHelp" class="form-text text-muted">Please enter your email id. We will send you a verification mail.</small>
   </div>
-  <button type="submit" class="btn btn-primary" routerLink="/upload-data">Send Verification e-mail</button>
+  <button type="submit" class="btn btn-primary" onclick="send_email()">Send Verification e-mail</button>
 </form>

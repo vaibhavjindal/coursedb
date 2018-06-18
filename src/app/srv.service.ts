@@ -13,6 +13,10 @@ export class SrvService {
   return of(DEPTS);
   }
 
+  getDepts2(): Dept[]{
+  return DEPTS;
+  }
+
   constructor() { }
 
   getDept(link: string): Observable<Dept> {
