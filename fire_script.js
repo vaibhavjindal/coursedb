@@ -19,17 +19,13 @@ function upload_data()
   insertdata.coursename=course.slice(ind+1,course.length);
   insertdata.year=document.getElementById("year").value;
   var temp='';
-  for(int i=0;i<insertdata.year.length;i++){
+  for(var i=0;i<insertdata.year.length;i++) {
     if(insertdata.year[i]=='-')
       continue;
-
     else
-      temp+=insertdata.year;
-
+      temp+=insertdata.year[i];
   }
   insertdata.year=temp;
-
-
   insertdata.sem=document.getElementById("sem").value;
   insertdata.upname=document.getElementById("upname").value;
   insertdata.des=document.getElementById("des").value;
