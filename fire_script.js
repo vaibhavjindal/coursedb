@@ -1,11 +1,11 @@
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyA80g9xgSC2UveR6GjNC5jIAOZF19bKKKM",
-  authDomain: "course-3aa9f.firebaseapp.com",
-  databaseURL: "https://course-3aa9f.firebaseio.com",
-  projectId: "course-3aa9f",
-  storageBucket: "course-3aa9f.appspot.com",
-  messagingSenderId: "856132855121"
+  apiKey: "AIzaSyDYoaAWQ7WiDbCmlBpcta82bcnZg-cECtw",
+  authDomain: "coursedb-2000.firebaseapp.com",
+  databaseURL: "https://coursedb-2000.firebaseio.com",
+  projectId: "coursedb-2000",
+  storageBucket: "coursedb-2000.appspot.com",
+  messagingSenderId: "738547070183"
 };
 firebase.initializeApp(config);
 function upload_data()
@@ -38,7 +38,7 @@ function send_email()
   {
       console.log("Access granted");
       var actionCodeSettings = {
-          'url':"https://course-3aa9f.firebaseapp.com/upload-data?user="+email+"&hash="+h, //Redirection Link
+          'url':"https://coursedb-2000.firebaseapp.com/upload-data?user="+email+"&hash="+h, //Redirection Link
           'handleCodeInApp': true // This must be true.Dont know why.
          };
          firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings).then(function() {
