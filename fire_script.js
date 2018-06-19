@@ -54,6 +54,7 @@ function send_email()
   else
   {
     console.log("Access Denied");
+    alert("Only a valid iitk email id can be used for verification.")
   }
 }
 function hellonikhil()
