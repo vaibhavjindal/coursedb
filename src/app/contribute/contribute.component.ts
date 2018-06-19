@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContributeComponent implements OnInit{ 
 
-  email: string="Email";
   constructor() {}
 
   ngOnInit() {
