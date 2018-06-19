@@ -8,13 +8,9 @@ import { DEPTS } from './dept-list';
   providedIn: 'root'
 })
 export class SrvService {
-  
+
   getDepts(): Observable<Dept[]> {
   return of(DEPTS);
-  }
-
-  getDepts2(): Dept[]{
-  return DEPTS;
   }
 
   constructor() { }

@@ -32,7 +32,9 @@
               "firebase-messaging.js",
               "firebase-functions.js",
               "firebase.js",
-              "fire_script.js"
+              "fire_script.js",
+              "fire_storage.js",
+              "hash.js"
             ]
           },
           "configurations": {

@@ -15,7 +15,8 @@ export class UploadDataComponent implements OnInit {
   permission: number;
 
   getDepts(): void {
-  this.depts = this.srvService.getDepts2();
+  this.srvService.getDepts()
+      .subscribe(depts => this.depts = depts);
   }
 
   up_files(key: number): void{
@@ -23,7 +24,7 @@ export class UploadDataComponent implements OnInit {
   }
 
   constructor(private srvService: SrvService) { }
-  
+
   ngOnInit() {
   this.getDepts();
   }
@@ -31,5 +32,5 @@ export class UploadDataComponent implements OnInit {
   onSelect(dept: Dept): void {
     this.selectedDept = dept;
   }
-  
+
 }
