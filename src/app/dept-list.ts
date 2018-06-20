@@ -2,7 +2,7 @@ import { Dept } from './dept';
 
 export const DEPTS: Dept[] = [
 
-{ name: 'Aerospace Engineering', link: 'ae', courses: [
+{ name: 'Aerospace Engineering', link: 'Aerospace Engineering', courses: [
 "AE201A-Introduction To Aerospace Engineering",
 "AE211A-Incompressible Aerodynamics",
 "AE251A-Experiments In Aerospace Engineering-I",
@@ -82,7 +82,7 @@ export const DEPTS: Dept[] = [
 "ESO202A-Mechanics of Solids"
 ] },
   
-{ name: 'Biological Sciences and Bio-engineering', link: 'bsbe', courses: [
+{ name: 'Biological Sciences and Bio-engineering', link: 'Biological Sciences and Bio-engineering', courses: [
 "BSE211A-Organ System, Physiology and Anatomy",
 "BSE221A-BIOCHEMISTRY",
 "BSE222A-Biochemical Engineering",
@@ -129,7 +129,7 @@ export const DEPTS: Dept[] = [
 "LIF101A-Introduction to Biology"
 ] },
 
-{ name: 'Chemical Engineering', link: 'che',courses: [
+{ name: 'Chemical Engineering', link: 'Chemical Engineering',courses: [
 "CHE211a-Fluid Mechanics And Its Application",
 "CHE221a-Chemical Engineering Thermodynamics",
 "CHE251a-Introduction To Che And Process Calculation",
@@ -176,7 +176,7 @@ export const DEPTS: Dept[] = [
 "ESO204a-Fluid Mechanics And Rate Processes"
 ] },
 
-{ name: 'Civil Engineering', link: 'ce',courses: [
+{ name: 'Civil Engineering', link: 'Civil Engineering',courses: [
 "CE211A-Environmental Quality and Pollution",
 "CE242A-Civil Engineering Materials",
 "CE262A-Engineering Hydraulics",
@@ -239,7 +239,7 @@ export const DEPTS: Dept[] = [
 "ES652A-Igneous And Metamorphic Petrology",
 ] },
 
-{ name: 'Computer Science and Engineering', link: 'cse' ,courses: [
+{ name: 'Computer Science and Engineering', link: 'Computer Science and Engineering' ,courses: [
 "CS201A-Mathematics For Computer Science -I",
 "CS202A-Mathematics For Computer Science -II",
 "CS210A-Data Structure And Algorithms",
@@ -297,7 +297,7 @@ export const DEPTS: Dept[] = [
 ]
 },
 
-{ name: 'Electrical Engineering', link: 'ee', courses: [
+{ name: 'Electrical Engineering', link: 'Electrical Engineering', courses: [
 "EE200A-Signals, systems and networks",
 "EE210A-Microelectronics-I",
 "EE250A-Control systems analysis",
@@ -383,7 +383,7 @@ export const DEPTS: Dept[] = [
 "ESO203A-Introduction To Electrical Engineering",
 ] },
 
-{ name: 'Materials Science and Engineering', link: 'mse', courses: [
+{ name: 'Materials Science and Engineering', link: 'Materials Science and Engineering', courses: [
 "ESO205A-Nature and Properties of Materials",
 "MSE201A-Thermodynamics and Phase Equilibria",
 "MSE202A-Rate Processes",
@@ -438,7 +438,7 @@ export const DEPTS: Dept[] = [
 "TA201A-Manufacturing Processes I",
 ] },
 
-{ name: 'Mechanical Engineering', link: 'me', courses: [
+{ name: 'Mechanical Engineering', link: 'Mechanical Engineering', courses: [
 "ME621A-INTRODUCTION TO SOLID MECHANICS",
 "ME625A-APPLIED DYNAMICS AND VIBRATIONS",
 "ME631A-VISCOUS FLOW THEORY",
@@ -509,7 +509,7 @@ export const DEPTS: Dept[] = [
 "ME850A-BASIC CONTROL SYSTEMS FOR MECHANICAL ENGINEERS"
 ] },
 
-{ name: 'Chemistry', link: 'chm', courses: [
+{ name: 'Chemistry', link: 'Chemistry', courses: [
 "CHM101a-Basic Chemistry Lab",
 "CHM102a-Basic Chemistry",
 "CHM202a-Basic Organic Chemistry -II",
@@ -572,7 +572,7 @@ export const DEPTS: Dept[] = [
 "CSO202a-Atoms, Molecules and Photons",
 ] },
 
-{ name: 'Earth Sciences', link: 'es', courses:[
+{ name: 'Earth Sciences', link: 'Earth Sciences', courses:[
 "ES640A-Earth System Processes",
 "ES642A-Geochemistry",
 "ES646A-Global Climate Change",
@@ -581,7 +581,7 @@ export const DEPTS: Dept[] = [
 },
 
 
-{ name: 'Economics', link: 'eco', courses: [
+{ name: 'Economics', link: 'Economics', courses: [
 "ECO101A",
 "ECO112A-Introducton To Macroeconomic Problems And Policies",
 "ECO201-Microeconomics I",
@@ -605,7 +605,7 @@ export const DEPTS: Dept[] = [
 ] },
 
 
-{ name: 'Mathematics and Scientific Computing', link: 'mth', courses: [
+{ name: 'Mathematics and Scientific Computing', link: 'Mathematics and Scientific Computing', courses: [
 "MSO201A-Probability And Statistics",
 "MSO202A-Complex Variables",
 "MTH101A-Mathematics I",
@@ -690,7 +690,7 @@ export const DEPTS: Dept[] = [
  },
 
 
-{ name: 'Physics', link: 'phy',courses:[
+{ name: 'Physics', link: 'Physics',courses:[
 "PHY101A-Physics Laboratory",
 "PHY102A-PHYSICS-I",
 "PHY103A-PHYSICS-II",
@@ -750,7 +750,7 @@ export const DEPTS: Dept[] = [
 "SE316A",
 ]},
 
-{ name: 'Humanities and Social Sciences', link: 'hss',courses: [
+{ name: 'Humanities and Social Sciences', link: 'Humanities and Social Sciences',courses: [
 "ART101A-Indian Art And Civilization",
 "ART102A-Introduction To Art Apreciation and Criticism",
 "ART103A-Introduction To Western Art",
@@ -799,7 +799,7 @@ export const DEPTS: Dept[] = [
 "SOC752A-Applied Statistics For Sociologists And Other Social Scientists",
 ]},
 
-{ name: 'Design Programme', link: 'des', courses: [
+{ name: 'Design Programme', link: 'Design Programme', courses: [
 "DES601A-Design Theory",
 "DES602A-Design Practice I",
 "DES621A-Creative Visualization",
