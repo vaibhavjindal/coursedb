@@ -29,8 +29,8 @@ export class UploadDataComponent implements OnInit {
   this.getDepts();
   }
 
-  onSelect(dept: Dept): void {
-    this.selectedDept = dept;
+  onSelect(key: string): void {
+    this.selectedDept = this.depts.find((val) => val.name == key)
   }
 
 }

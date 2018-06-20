@@ -13,7 +13,7 @@
 <p id="hello"></p>
 <button routerLink="/upload-files">Next</button>
  -->
-<img src="https://www.techtricksnow.com/wp-content/uploads/2017/05/fb.png" onload="hellonikhil()">
+<img src="https://www.techtricksnow.com/wp-content/uploads/2017/05/fb.png" onload="hellonikhil()" >
 <div class="form-group">
 <label for="upname">Name</label>
 <input type="text" class="form-control" id="upname" placeholder="Enter your name">
@@ -30,9 +30,9 @@
 
 <div class="form-group">
     <label for="department" placeholder="Select Department">Department</label>
-    <select class="form-control" id="department">
+    <select #department class="form-control" id="department" (change)="onSelect(department.value)">
       <option disabled>Select a department</option>
-      <option *ngFor="let dept of depts" (click)="onSelect(dept)">{{dept.name}}</option>
+      <option *ngFor="let dept of depts">{{dept.name}}</option>
     </select>
   </div>
 
