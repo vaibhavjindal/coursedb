@@ -19,7 +19,8 @@ function upload_data()
   insertdata.coursename=course.slice(ind+1,course.length);
   insertdata.year=document.getElementById("year").value;
   var temp='';
-  for(var i=0;i<insertdata.year.length;i++) {
+  for(var i=0;i<insertdata.year.length;i++)
+  {
     if(insertdata.year[i]=='-')
       continue;
     else
@@ -29,10 +30,70 @@ function upload_data()
   insertdata.sem=document.getElementById("sem").value;
   insertdata.upname=document.getElementById("upname").value;
   insertdata.des=document.getElementById("des").value;
-  var reference=insertdata.department+"/"+insertdata.coursecode+insertdata.year+insertdata.sem;
+  var notes=document.getElementById("notes").files;
+  var assign=document.getElementById("assign").files;
+  var others=document.getElementById("others").files;
+  var n=[];
+  for(var i=0;i<notes.length;i++)
+  {
+      var file = notes[i];
+      n.push(file.name);
+  }
+  var a=[];
+  for(var i=0;i<assign.length;i++)
+  {
+    var file = assign[i];
+    a.push(file.name);
+  }
+  var o=[];
+  for(var i=0;i<others.length;i++)
+  {
+    var file = others[i];
+    o.push(file.name);
+  }
+  insertdata.notes=n;
+  insertdata.assign=a;
+  insertdata.others=o;
+  var reference=insertdata.department+"/"+insertdata.coursecode+insertdata.year+insertdata.sem+insertdata.upname;
   var storageref = database.ref(reference);
   storageref.set(insertdata);
-  document.getElementById("hello").innerHTML="Data Inserted";
+  var storageRef = firebase.storage().ref();
+  var dept=insertdata.department;
+  var c_code=insertdata.coursecode;
+  var newref=storageRef.child(dept+"/"+c_code);
+  for(var i=0;i<notes.length;i++)
+  {
+    var file = notes[i];
+      var mountainsRef = newref.child(file.name);
+      mountainsRef.put(file).then(function(snapshot)
+      {
+        console.log('Uploaded'+file.name);
+      }).catch(function(error) {
+        console.error('Upload failed:', error);
+      });
+  }
+  for(var i=0;i<assign.length;i++)
+  {
+    var file = assign[i];
+      var mountainsRef = newref.child(file.name);
+      mountainsRef.put(file).then(function(snapshot)
+      {
+        console.log('Uploaded'+file.name);
+      }).catch(function(error) {
+        console.error('Upload failed:', error);
+      });
+  }
+  for(var i=0;i<others.length;i++)
+  {
+    var file = others[i];
+      var mountainsRef = newref.child(file.name);
+      mountainsRef.put(file).then(function(snapshot)
+      {
+        console.log('Uploaded'+file.name);
+      }).catch(function(error) {
+        console.error('Upload failed:', error);
+      });
+  }
 }
 function send_email()
 {
