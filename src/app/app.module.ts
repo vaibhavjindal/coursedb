@@ -9,6 +9,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { ContributeComponent } from './contribute/contribute.component';
 import { UploadDataComponent } from './upload-data/upload-data.component';
+import { CourseFilesComponent } from './course-files/course-files.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UploadDataComponent } from './upload-data/upload-data.component';
     AboutComponent,
     ContributeComponent,
     UploadDataComponent,
+    CourseFilesComponent,
   ],
   imports: [
     BrowserModule,

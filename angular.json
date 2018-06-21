@@ -34,7 +34,8 @@
               "firebase.js",
               "fire_script.js",
               "fire_storage.js",
-              "hash.js"
+              "hash.js",
+              "read_fire.js"
             ]
           },
           "configurations": {

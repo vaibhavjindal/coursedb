@@ -22,4 +22,11 @@ export class NavbarComponent implements OnInit {
     this.getDepts();
   }
   
+  clear(): void{
+    clear_js();
+  }
+}
+
+function clear_js(){
+  document.getElementById("dis").innerHTML="";
 }
