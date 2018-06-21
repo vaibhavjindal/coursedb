@@ -62,5 +62,5 @@ function show_files(){
         document.getElementById("cf").innerHTML+="<a href="+url+">"+otherslist[j]+"</a><br>";
       })
       }
-    }
+    })
 }
