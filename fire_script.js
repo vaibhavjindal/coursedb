@@ -13,7 +13,15 @@ function upload_data()
   var database = firebase.database();
   var insertdata={};
   insertdata.department=document.getElementById("department").value;
-  var course=document.getElementById("course").value;
+  try
+  {
+    var course=document.getElementById("course").value;
+  }
+  catch(err)
+  {
+    document.getElementById("err").innerHTML="You must provide a field values";
+    return;
+  }
   var ind=course.indexOf("-");
   insertdata.coursecode=course.slice(0,ind);
   insertdata.coursename=course.slice(ind+1,course.length);
@@ -33,6 +41,42 @@ function upload_data()
   var notes=document.getElementById("notes").files;
   var assign=document.getElementById("assign").files;
   var others=document.getElementById("others").files;
+  if(insertdata.department=="")
+  {
+    document.getElementById("err").innerHTML="You must provide a department name";
+    return;
+  }
+  if(insertdata.coursecode=="")
+  {
+    document.getElementById("err").innerHTML="You must select a course";
+    return;
+  }
+  if(insertdata.year=="")
+  {
+    document.getElementById("err").innerHTML="You must provide a year";
+    return;
+  }
+  if(insertdata.sem=="")
+  {
+    document.getElementById("err").innerHTML="You must select a semester";
+    return;
+  }
+  if(insertdata.upname=="")
+  {
+    document.getElementById("err").innerHTML="You must provide your name";
+    return;
+  }
+  if(insertdata.des=="")
+  {
+    document.getElementById("err").innerHTML="You must provide your designation";
+    return;
+  }
+  if(notes.length+assign.length+others.length==0)
+  {
+    document.getElementById("err").innerHTML="You must provide at least one file to upload";
+    return;
+  }
+  document.getElementById("a").disabled = true;
   var n=[];
   for(var i=0;i<notes.length;i++)
   {
@@ -105,6 +149,7 @@ function send_email()
   var h=md5(hashstr);
   if(domain=="iitk.ac.in")
   {
+      document.getElementById("clickbut").disabled = true;
       console.log("Access granted");
       var actionCodeSettings = {
           'url':"https://coursedb-2000.firebaseapp.com/upload-data?user="+email+"&hash="+h, //Redirection Link
