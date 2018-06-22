@@ -108,35 +108,44 @@ function upload_data()
   for(var i=0;i<notes.length;i++)
   {
     var file = notes[i];
+    document.getElementById("notesdisplay").innerHTML="uploading "+(i+1)+" of "+notes.length+" notes";
       var mountainsRef = newref.child(file.name);
-      mountainsRef.put(file).then(function(snapshot)
-      {
-        console.log('Uploaded'+file.name);
-      }).catch(function(error) {
-        console.error('Upload failed:', error);
-      });
+      document.getElementById("notesBar").style.width="1px";
+      var uptask=mountainsRef.put(file);
+      uptask.on('state_changed', function(snapshot){
+        progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log(progress);
+        p=Math.floor(progress)*5;
+        document.getElementById("notesBar").style.width=p+"px";
+      })
   }
   for(var i=0;i<assign.length;i++)
   {
     var file = assign[i];
+    document.getElementById("assigndisplay").innerHTML="uploading "+(i+1)+" of "+assign.length+" assignments";
       var mountainsRef = newref.child(file.name);
-      mountainsRef.put(file).then(function(snapshot)
-      {
-        console.log('Uploaded'+file.name);
-      }).catch(function(error) {
-        console.error('Upload failed:', error);
-      });
+      document.getElementById("assignBar").style.width="1px";
+      var uptask=mountainsRef.put(file);
+      uptask.on('state_changed', function(snapshot){
+        progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log(progress);
+        p=Math.floor(progress)*5;
+        document.getElementById("assignBar").style.width=p+"px";
+      })
   }
   for(var i=0;i<others.length;i++)
   {
     var file = others[i];
+    document.getElementById("othersdisplay").innerHTML="uploading "+(i+1)+" of "+others.length+" other files";
       var mountainsRef = newref.child(file.name);
-      mountainsRef.put(file).then(function(snapshot)
-      {
-        console.log('Uploaded'+file.name);
-      }).catch(function(error) {
-        console.error('Upload failed:', error);
-      });
+      document.getElementById("othersBar").style.width="1px";
+      var uptask=mountainsRef.put(file);
+      uptask.on('state_changed', function(snapshot){
+        progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        console.log(progress);
+        p=Math.floor(progress)*5;
+        document.getElementById("othersBar").style.width=p+"px";
+      })
   }
 }
 function send_email()
