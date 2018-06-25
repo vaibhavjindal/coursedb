@@ -8,6 +8,23 @@ var config = {
   messagingSenderId: "738547070183"
 };
 firebase.initializeApp(config);
+
+
+
+
+
+function timeset(data){
+  setTimeout(gotData(data),1000);
+  obj.getdata();
+}
+
+
+
+
+
+
+
+
 function upload_data()
 {
   var database = firebase.database();
@@ -148,6 +165,16 @@ function upload_data()
       })
   }
 }
+
+
+
+
+
+
+
+
+
+
 function send_email()
 {
   var email=document.getElementById("exampleInputEmail1").value;
@@ -219,5 +246,100 @@ function hellonikhil()
     {
       document.write("Access Denied");
     }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+function gotData(data) {
+
+
+  window.obj={
+  
+  
+
+  getdata:function(){
+  window.all=[];
+  var depts=[];
+    var coursecode=[];
+    var coursename=[];
+    
+
+    for(var dept in data){
+      depts.push(dept);
+      all.push(dept)
+
+      for(code in data[dept]){
+        coursecode.push(code)
+        all.push(code)
+
+        name = data[dept][code]['coursename']
+          coursename.push(name)
+          all.push(name)
+        
+      }
+    }
+    console.log(all);
+  },
+
+    addkeys:function(){
+      console.log('inside addkeys');
+      console.log(all.length);
+      var tosearch=document.getElementById('search').value;
+      tosearch=tosearch.replace(/^"(.*)"$/, '$1');
+      tosearch=tosearch.toUpperCase();
+      for(var i=0;i<all.length;i++){
+        var counter=1;
+        var temp=all[i].toUpperCase();
+        if(temp.search(tosearch)){
+
+          var searchobject=document.getElementById('data');
+          for(var j=0;j<searchobject.children.length;j++){
+            if(all[i]==searchobject.children[j].value){
+              counter=0;
+              break;
+            }
+          }
+          if(counter){
+            var opt=document.createElement('option');
+          opt.value=all[i];
+          opt.appendChild(document.createTextNode(all[i]));
+          document.getElementById('data').appendChild(opt);
+          }
+        }
+      }
+    }
+
+}
+
+}
+
+var textinput=document.getElementById('search');
+document.getElementById('search').defaultValue='';
+var timeout_input=null;
+textinput.onkeyup=function(e){
+  clearTimeout(timeout_input);
+  timeout_input=setTimeout(obj.addkeys,1000)
+}
+
+function get_json(){
+  var url="https://coursedb-2000.firebaseio.com/.json";
+  var request=new XMLHttpRequest();
+  request.open('GET',url);
+  request.responseType='json';
+  request.send();
+  request.onload=function(){
+    console.log('script loaded');
+    var DATA=request.response;
+    timeset(DATA);
+
   }
 }

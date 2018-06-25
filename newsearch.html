@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Search for files</title>
+
+
+</head>
+<body>
+<center><h2>Please enter course</h2>
+<br>
+<input list='data' type='text' id='search'>
+<input list='data' type='text'>
+<datalist id='data'>
+</datalist>
+<br>
+</center>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+<script type="text/javascript">
+	var config = {
+  apiKey: "AIzaSyDYoaAWQ7WiDbCmlBpcta82bcnZg-cECtw",
+    authDomain: "coursedb-2000.firebaseapp.com",
+    databaseURL: "https://coursedb-2000.firebaseio.com",
+    projectId: "coursedb-2000",
+    storageBucket: "coursedb-2000.appspot.com",
+    messagingSenderId: "738547070183"
+
+};
+                    firebase.initializeApp(config);
+
+    var textinput=document.getElementById('search');
+    var timeout_input=null;
+    var timeout_add=null;
+    textinput.onkeyup=function(e){
+        
+        clearTimeout(timeout_input);
+        clearInterval(timeout_add);
+        timeout_input=setTimeout(getdata,700);
+        timeout_add=setInterval(function(){
+            if(window.count)
+                addkeys();
+        },1700);
+
+    }
+        
+    
+    function getdata() {
+    	var tosearch=document.getElementById('search').value;
+    	tosearch=tosearch.replace(/^"(.*)"$/, '$1');
+    	tosearch=tosearch.toUpperCase();
+		window.all=[];
+    	var depts=[];   //depts
+    	var coursecode=[];   // stores file name of the json files that match with the input
+    	var coursename=[];  //
+    	var database=firebase.database();
+    	var dataref=database.ref();
+    	dataref.once('value').then(function(snapshot){
+    		snapshot.forEach(function(childsnapshot){
+    			var t1=childsnapshot.key.toUpperCase();
+
+
+    		//	console.log(tosearch)
+    		//	console.log(t1)
+    			if(t1.search(tosearch)>=0)
+    		{	depts.push(t1);
+					}
+
+    			var dept=childsnapshot.key;
+    			var child_dataref=database.ref(childsnapshot.key);
+    			child_dataref.once('value').then(function(snapshot){
+    				snapshot.forEach(function(childsnapshot){
+    					var t2=childsnapshot.key.toUpperCase();
+    					if(t2.search(tosearch)>=0)
+    				{	coursecode.push(t2);
+						all.push(t2);	}
+
+    					var root_dataref=database.ref(dept+'/'+childsnapshot.key);
+    					root_dataref.once('value').then(function(snapshot){
+    						var t3=String(snapshot.val().coursename);
+    						t3=t3.toUpperCase();
+    						if(t3.search(tosearch)>=0)
+    						{	coursename.push(t3);
+                                all.push(t3);	}
+    					})
+
+    				});
+    			});
+   		});
+            window.count=0;
+
+   console.log(all);
+    console.log(coursecode);
+    console.log(coursename);
+    count=1;
+    		});
+    	
+
+    
+}
+
+function addkeys(){
+   
+console.log('inside adddkeys');
+console.log(all.length);
+for(var i=0;i<all.length;i++)
+{
+var searchobj=document.getElementById('data');
+var counter=1;
+for(var j=0;j<searchobj.children.length;j++)
+{
+if(all[i]==searchobj.children[j].value)
+{
+counter=0;
+break;
+}
+}
+if(counter){
+var opt=document.createElement('option');
+opt.value=all[i];
+opt.appendChild(document.createTextNode(all[i]));
+document.getElementById('data').appendChild(opt);
+}
+}
+}
+
+</script>
+</body>
+</html>

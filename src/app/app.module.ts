@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ContributeComponent } from './contribute/contribute.component';
 import { UploadDataComponent } from './upload-data/upload-data.component';
 import { CourseFilesComponent } from './course-files/course-files.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { CourseFilesComponent } from './course-files/course-files.component';
     ContributeComponent,
     UploadDataComponent,
     CourseFilesComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
