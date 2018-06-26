@@ -297,10 +297,11 @@ function gotData(data) {
 
 
   getdata:function(){
+    var temp;
   window.all=[];
-  var depts=[];
-    var coursecode=[];
-    var coursename=[];
+ // var depts=[];
+  //  var coursecode=[];
+   // var coursename=[];
 
 
     for(var dept in data){
@@ -309,15 +310,16 @@ function gotData(data) {
 
       for(code in data[dept]){
       //  coursecode.push(code)
-        all.push(code)
+        //all.push(code)
 
         name = data[dept][code]['coursename']
-          coursename.push(name)
-          all.push(name)
+        code=data[dept][code]['coursecode']
+        temp=code+' - '+name+'  ('+dept+')';
+        all.push(temp);
 
       }
     }
-    //console.log(all);
+    console.log(all);
   },
 
    /* addkeys:function(){
@@ -349,11 +351,27 @@ function gotData(data) {
     } */
 
     addkeys:function(){
+      var counter=1;
+      var searchobject=document.getElementById('data');
       for(var i=0;i<all.length;i++){
+        counter=1;
+        for(var j=0;j<searchobject.children.length;j++){
+          if(all[i]==searchobject.children[j].value){
+            counter=0;
+
+            break;
+          }
+        }
+          if(counter){
+            console.log('adding values')
+
         var opt=document.createElement('option');
           opt.value=all[i];
           opt.appendChild(document.createTextNode(all[i]));
           document.getElementById('data').appendChild(opt);
+          
+
+        }
       }
     }
 
@@ -384,4 +402,10 @@ function get_json(){
     timeset(DATA);
 
   }
+}
+
+function redirect_course()
+{
+  console.log(document.getElementById('search').value)
+
 }
