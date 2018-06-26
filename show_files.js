@@ -25,36 +25,35 @@ class Show{
 
         //printing lectures
         for(var i=0;i<lecturelist.length;i++)
-        { console.log(lecturelist[i])
+        {
+          console.log("i is "+i);
         storageref.child(data.department+"/"+data.coursecode+"/"+lecturelist[i]).getDownloadURL().then(function(url){
-          console.log("Hi urls");
-          console.log(url);
-          document.getElementById("cf").innerHTML+="<a href="+url+">"+lecturelist[i]+"</a><br>";
-          console.log("i is"+i);
+          console.log("i is "+i);
+          console.log(typeof(url));
+          document.getElementById("cf").innerHTML+="<a href="+url+">"+lecturelist[i-1]+"</a><br>";
+          console.log(lecturelist+"       "+i);
         })
         }
 
         //printing assignments
         for(var j=0;j<assignlist.length;j++)
         {
-          console.log(assignlist[j])
+          console.log("j is "+j);
         storageref.child(data.department+"/"+data.coursecode+"/"+assignlist[j]).getDownloadURL().then(function(url){
-          console.log("Hi urls");
-          console.log(url);
-          document.getElementById("cf").innerHTML+="<a href="+url+">"+assignlist[j]+"</a><br>";
-          console.log("j is"+j);
+          console.log("j is "+j);
+          document.getElementById("cf").innerHTML+="<a href="+url+">"+assignlist[j-1]+"</a><br>";
+          console.log(assignlist+"       "+j);
         })
         }
 
         //printing others
         for(var k=0;k<otherslist.length;k++)
         {
-        console.log(otherslist[k]+"       "+j)
+          console.log("k is "+k);
         storageref.child(data.department+"/"+data.coursecode+"/"+otherslist[k]).getDownloadURL().then(function(url){
-          console.log("Hi urls");
-          console.log(url);
-          document.getElementById("cf").innerHTML+="<a href="+url+">"+otherslist[k]+"</a><br>";
-          console.log("k is"+k);
+          console.log("k is "+k);
+          document.getElementById("cf").innerHTML+="<a href="+url+">"+otherslist[k-1]+"</a><br>";
+          console.log(otherslist+ "       "+k);
         })
         }
       })
