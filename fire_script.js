@@ -406,6 +406,10 @@ function get_json(){
 
 function redirect_course()
 {
-  console.log(document.getElementById('search').value)
+  var str=document.getElementById('search').value;
+  var x=str.indexOf(' ');
+  var y=str.indexOf('(');
+  var z=str.indexOf(')');
+  window.location='courses/@'+str.slice(y+1,z)+'@'+str.slice(0,x)
 
 }
