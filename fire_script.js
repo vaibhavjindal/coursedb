@@ -14,8 +14,9 @@ firebase.initializeApp(config);
 
 
 function timeset(data){
-  setTimeout(gotData(data),1000);
+  setTimeout(gotData(data),200);
   obj.getdata();
+  setTimeout(obj.addkeys(),500)
 }
 
 
@@ -274,11 +275,11 @@ function gotData(data) {
     
 
     for(var dept in data){
-      depts.push(dept);
-      all.push(dept)
+     // depts.push(dept);
+     // all.push(dept)
 
       for(code in data[dept]){
-        coursecode.push(code)
+      //  coursecode.push(code)
         all.push(code)
 
         name = data[dept][code]['coursename']
@@ -287,10 +288,10 @@ function gotData(data) {
         
       }
     }
-    console.log(all);
+    //console.log(all);
   },
 
-    addkeys:function(){
+   /* addkeys:function(){
       console.log('inside addkeys');
       console.log(all.length);
       var tosearch=document.getElementById('search').value;
@@ -316,19 +317,31 @@ function gotData(data) {
           }
         }
       }
+    } */
+
+    addkeys:function(){
+      for(var i=0;i<all.length;i++){
+        var opt=document.createElement('option');
+          opt.value=all[i];
+          opt.appendChild(document.createTextNode(all[i]));
+          document.getElementById('data').appendChild(opt);
+      }
     }
 
 }
 
 }
 
+
+/*function input_call(){
+  console.log('inside input call')
 var textinput=document.getElementById('search');
 document.getElementById('search').defaultValue='';
 var timeout_input=null;
-textinput.onkeyup=function(e){
   clearTimeout(timeout_input);
-  timeout_input=setTimeout(obj.addkeys,1000)
-}
+  timeout_input=setTimeout(obj.addkeys,700)
+
+}*/
 
 function get_json(){
   var url="https://coursedb-2000.firebaseio.com/.json";
