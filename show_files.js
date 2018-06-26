@@ -1,4 +1,4 @@
-class Show{ 
+class Show{
   show_files(){
   	var url=window.location.href;
   	var temp=url.indexOf('files');
@@ -16,34 +16,45 @@ class Show{
         var assignlist=data.assign;
         var otherslist=data.others;
         var storageref=firebase.storage().ref();
-        
+        console.log(lecturelist.length);
+        console.log(assignlist.length);
+        console.log(otherslist.length);
+        console.log(typeof(lecturelist));
+        console.log(typeof(assignlist));
+        console.log(typeof(otherslist));
+
         //printing lectures
-        for(var j=0;j<lecturelist.length;j++)
-        {
-        storageref.child(data.department+"/"+data.coursecode+"/"+lecturelist[j]).getDownloadURL().then(function(url){
+        for(var i=0;i<lecturelist.length;i++)
+        { console.log(lecturelist[i])
+        storageref.child(data.department+"/"+data.coursecode+"/"+lecturelist[i]).getDownloadURL().then(function(url){
           console.log("Hi urls");
           console.log(url);
-          document.getElementById("cf").innerHTML+="<a href="+url+">"+lecturelist[j]+"</a><br>";
+          document.getElementById("cf").innerHTML+="<a href="+url+">"+lecturelist[i]+"</a><br>";
+          console.log("i is"+i);
         })
         }
-        
+
         //printing assignments
         for(var j=0;j<assignlist.length;j++)
         {
+          console.log(assignlist[j])
         storageref.child(data.department+"/"+data.coursecode+"/"+assignlist[j]).getDownloadURL().then(function(url){
           console.log("Hi urls");
           console.log(url);
           document.getElementById("cf").innerHTML+="<a href="+url+">"+assignlist[j]+"</a><br>";
+          console.log("j is"+j);
         })
         }
-        
+
         //printing others
-        for(var j=0;j<otherslist.length;j++)
+        for(var k=0;k<otherslist.length;k++)
         {
-        storageref.child(data.department+"/"+data.coursecode+"/"+otherslist[j]).getDownloadURL().then(function(url){
+        console.log(otherslist[k]+"       "+j)
+        storageref.child(data.department+"/"+data.coursecode+"/"+otherslist[k]).getDownloadURL().then(function(url){
           console.log("Hi urls");
           console.log(url);
-          document.getElementById("cf").innerHTML+="<a href="+url+">"+otherslist[j]+"</a><br>";
+          document.getElementById("cf").innerHTML+="<a href="+url+">"+otherslist[k]+"</a><br>";
+          console.log("k is"+k);
         })
         }
       })
