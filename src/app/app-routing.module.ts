@@ -7,9 +7,11 @@ import { ContributeComponent } from './contribute/contribute.component';
 import { DepartmentComponent } from './department/department.component';
 import { UploadDataComponent } from './upload-data/upload-data.component';
 import { CourseFilesComponent } from './course-files/course-files.component';
+import { CoursesComponent } from './courses/courses.component';
 
 
 const routes: Routes = [
+  { path: 'courses/:ccode', component: CoursesComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'department/:link', component: DepartmentComponent },
