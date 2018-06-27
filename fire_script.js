@@ -440,3 +440,7 @@ function redirect_course()
   window.location='courses/@'+str.slice(y+1,z)+'@'+str.slice(0,x)
 
 }
+function home_redirect()
+{
+  window.location.assign("https://coursedb-2000.firebaseapp.com/home");
+}
