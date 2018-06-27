@@ -1,11 +1,11 @@
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyDYoaAWQ7WiDbCmlBpcta82bcnZg-cECtw",
-  authDomain: "coursedb-2000.firebaseapp.com",
-  databaseURL: "https://coursedb-2000.firebaseio.com",
-  projectId: "coursedb-2000",
-  storageBucket: "coursedb-2000.appspot.com",
-  messagingSenderId: "738547070183"
+  apiKey: "AIzaSyBlnIx5UZcA3aNCwI0GjtSQOgvFDHgdnJQ",
+  authDomain: "coursedbiitk.firebaseapp.com",
+  databaseURL: "https://coursedbiitk.firebaseio.com",
+  projectId: "coursedbiitk",
+  storageBucket: "coursedbiitk.appspot.com",
+  messagingSenderId: "227597663485"
 };
 firebase.initializeApp(config);
 
@@ -207,7 +207,7 @@ function upload_data()
   {
     if(uploaded==(notes.length+assign.length+others.length))
     {
-    window.location.assign("https://coursedb-2000.firebaseapp.com/thanks");
+    window.location.assign("https://coursedbiitk.firebaseapp.com/thanks");
   }
   else {
     console.log("Uploaded is     "+uploaded);
@@ -245,7 +245,7 @@ function send_email()
       document.getElementById("clickbut").disabled = true;
       console.log("Access granted");
       var actionCodeSettings = {
-          'url':"https://coursedb-2000.firebaseapp.com/upload-data?user="+email+"&hash="+h, //Redirection Link
+          'url':"https://coursedbiitk.firebaseapp.com/upload-data?user="+email+"&hash="+h, //Redirection Link
           'handleCodeInApp': true // This must be true.Dont know why.
          };
          firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings).then(function() {
@@ -418,7 +418,7 @@ var timeout_input=null;
 }*/
 
 function get_json(){
-  var url="https://coursedb-2000.firebaseio.com/.json";
+  var url="https://coursedbiitk.firebaseio.com/.json";
   var request=new XMLHttpRequest();
   request.open('GET',url);
   request.responseType='json';
@@ -442,5 +442,5 @@ function redirect_course()
 }
 function home_redirect()
 {
-  window.location.assign("https://coursedb-2000.firebaseapp.com/home");
+  window.location.assign("https://coursedbiitk.firebaseapp.com/home");
 }
