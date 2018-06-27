@@ -152,6 +152,7 @@ function upload_data()
   var dept=insertdata.department;
   var c_code=insertdata.coursecode;
   var newref=storageRef.child(dept+"/"+c_code);
+  var uploaded=0;
   for(var i=0;i<notes.length;i++)
   {
     var file = notes[i];
@@ -165,6 +166,8 @@ function upload_data()
         p=Math.floor(progress)*5;
         document.getElementById("notesBar").style.width=p+"px";
       })
+      uploaded++;
+      console.log("Uploaded is "+uploaded);
   }
   for(var i=0;i<assign.length;i++)
   {
@@ -179,6 +182,8 @@ function upload_data()
         p=Math.floor(progress)*5;
         document.getElementById("assignBar").style.width=p+"px";
       })
+      uploaded++;
+      console.log("Uploaded is "+uploaded);
   }
   for(var i=0;i<others.length;i++)
   {
@@ -193,6 +198,12 @@ function upload_data()
         p=Math.floor(progress)*5;
         document.getElementById("othersBar").style.width=p+"px";
       })
+      uploaded++;
+      console.log("Uploaded is "+uploaded);
+  }
+  if(uploaded==(notes.length+assign.length+others.length))
+  {
+    window.location.assign("https://coursedb-2000.firebaseapp.com/thanks");
   }
 }
 
@@ -369,7 +380,7 @@ function gotData(data) {
           opt.value=all[i];
           opt.appendChild(document.createTextNode(all[i]));
           document.getElementById('data').appendChild(opt);
-          
+
 
         }
       }
