@@ -145,6 +145,8 @@ function upload_data()
   insertdata.notes=n;
   insertdata.assign=a;
   insertdata.others=o;
+  function uploader()
+  {
   var reference=insertdata.department+"/"+insertdata.coursecode+insertdata.year+insertdata.sem+insertdata.upname;
   var storageref = database.ref(reference);
   storageref.set(insertdata);
@@ -162,12 +164,12 @@ function upload_data()
       var uptask=mountainsRef.put(file);
       uptask.on('state_changed', function(snapshot){
         progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log(progress);
         p=Math.floor(progress)*5;
         document.getElementById("notesBar").style.width=p+"px";
       })
-      uploaded++;
-      console.log("Uploaded is "+uploaded);
+      uptask.then(function(snapshot1){
+        uploaded++;
+      })
   }
   for(var i=0;i<assign.length;i++)
   {
@@ -178,12 +180,12 @@ function upload_data()
       var uptask=mountainsRef.put(file);
       uptask.on('state_changed', function(snapshot){
         progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log(progress);
         p=Math.floor(progress)*5;
         document.getElementById("assignBar").style.width=p+"px";
       })
-      uploaded++;
-      console.log("Uploaded is "+uploaded);
+      uptask.then(function(snapshot1){
+        uploaded++;
+      })
   }
   for(var i=0;i<others.length;i++)
   {
@@ -194,19 +196,33 @@ function upload_data()
       var uptask=mountainsRef.put(file);
       uptask.on('state_changed', function(snapshot){
         progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log(progress);
         p=Math.floor(progress)*5;
         document.getElementById("othersBar").style.width=p+"px";
       })
-      uploaded++;
-      console.log("Uploaded is "+uploaded);
+      uptask.then(function(snapshot1){
+        uploaded++;
+      })
   }
-  if(uploaded==(notes.length+assign.length+others.length))
+  function redirecter()
   {
+    if(uploaded==(notes.length+assign.length+others.length))
+    {
     window.location.assign("https://coursedb-2000.firebaseapp.com/thanks");
   }
+  else {
+    console.log("Uploaded is     "+uploaded);
+    setTimeout(redirecter, 3000);
+  }
+  }
+  redirecter();
+  /*return new Promise(function (fulfill, reject){
+    //do stuff
+    fulfill(); //if the action succeeded
+    reject(); //if the action did not succeed
+});*/
 }
-
+uploader();
+}
 
 
 
