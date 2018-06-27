@@ -12,7 +12,9 @@ class Fetchbycc{
       function recur_data(obj)
       {
           console.log("Hi recursion");
-          refs.push(obj.key);
+          if(obj.key.includes(str2)){
+            refs.push(obj.key);
+          }
           if(obj.left.key)
           {
             recur_data(obj.left);
@@ -26,9 +28,7 @@ class Fetchbycc{
       console.log(snapshot.node_.children_.root_);
       console.log(refs);
       for (var i=0;i<refs.length;i++){
-        if(refs[i].includes(str2)){
-          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedb-2000.firebaseapp.com/course-files/'+dep+'@'+refs[i]+'">'+refs[i]+'</a><br>';
-        }
+        document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedb-2000.firebaseapp.com/course-files/'+dep+'@'+refs[i]+'">'+refs[i]+'</a><br>';
       }
     })
   }

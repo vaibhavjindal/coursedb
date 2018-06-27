@@ -35,9 +35,14 @@ class Fetch{
         }
         if(ccodes.indexOf(ccode)<0){
           ccodes.push(ccode);
-          document.getElementById("dis").innerHTML+='<a href="http://coursedb-2000.firebaseapp.com/courses/@'+dep+'@'+ccode+'">'+ccode+'</a><br>';
         }
       }
+      ccodes.sort();
+
+      for (var i=0;i<ccodes.length;i++){
+          document.getElementById("dis").innerHTML+='<a href="http://coursedb-2000.firebaseapp.com/courses/@'+dep+'@'+ccodes[i]+'">'+ccodes[i]+'</a><br>';
+      }
+
     })
   }
 }
