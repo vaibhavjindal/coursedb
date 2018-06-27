@@ -25,8 +25,18 @@ class Fetch{
       recur_data(snapshot.node_.children_.root_);
       console.log(snapshot.node_.children_.root_);
       console.log(refs);
+      var ccodes=[];
       for (var i=0;i<refs.length;i++){
-        document.getElementById("dis").innerHTML+='<a href="http://coursedb-2000.firebaseapp.com/course-files/'+dep+'@'+refs[i]+'">'+refs[i]+'</a><br>';
+        if(refs[i].search(/\d/)==3){
+          var ccode=refs[i].slice(0,7);
+        }
+        else{
+          var ccode=refs[i].slice(0,6);
+        }
+        if(ccodes.indexOf(ccode)<0){
+          ccodes.push(ccode);
+          document.getElementById("dis").innerHTML+='<a href="http://coursedb-2000.firebaseapp.com/courses/@'+dep+'@'+ccode+'">'+ccode+'</a><br>';
+        }
       }
     })
   }
