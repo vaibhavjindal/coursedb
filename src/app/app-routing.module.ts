@@ -7,7 +7,7 @@ import { ContributeComponent } from './contribute/contribute.component';
 import { DepartmentComponent } from './department/department.component';
 import { UploadDataComponent } from './upload-data/upload-data.component';
 import { CourseFilesComponent } from './course-files/course-files.component';
-
+import { ThanksComponent } from './thanks/thanks.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -16,7 +16,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contribute', component: ContributeComponent },
   { path: 'upload-data', component: UploadDataComponent },
-  { path: 'course-files/:cname', component: CourseFilesComponent }
+  { path: 'course-files/:cname', component: CourseFilesComponent },
+  { path: 'thanks', component: ThanksComponent }
 ];
 
 @NgModule({
