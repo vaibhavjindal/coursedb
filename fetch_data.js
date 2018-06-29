@@ -63,6 +63,7 @@ var url="https://coursedbiitk.firebaseio.com/"+str+".json";
         ccodes_name[i]=ccodes_name[i]+'     '+temp;
       }
       ccodes.sort();
+      ccodes_name.sort();
 
       for (var i=0;i<ccodes.length;i++){
           document.getElementById("dis").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/courses/@'+dep+'@'+ccodes[i]+'">'+ccodes_name[i]+'</a><br>';
