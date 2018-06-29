@@ -8,6 +8,12 @@ class Show{
   	var database = firebase.database();
   	var newref=database.ref(dep+"/"+course);
   	document.getElementById("cf").innerHTML+=dep+">"+course+"<br>";
+    document.getElementById("l_notes").innerHTML+="Lecture Notes<br>";
+    document.getElementById("l_assign").innerHTML+="Assignments<br>";
+    document.getElementById("l_others").innerHTML+="others<br>";
+    var l=document.getElementById("l_notes");
+    var a=document.getElementById("l_assign");
+    var o=document.getElementById("l_others");
 
   	newref.once('value').then(function(snap){
         console.log(snap.val());
@@ -24,39 +30,51 @@ class Show{
         console.log(typeof(otherslist));
 
         //printing lectures
+        function load_lectures(x)
+        {
+          storageref.child(data.department+"/"+data.coursecode+"/"+lecturelist[x]).getDownloadURL().then(function(url){
+            console.log("i is "+x);
+            l.innerHTML+="<a href="+url+">"+lecturelist[x]+"</a><br>";
+            console.log(lecturelist+"       "+x);
+          })
+        }
         for(var i=0;i<lecturelist.length;i++)
         {
           console.log("i is "+i);
-        storageref.child(data.department+"/"+data.coursecode+"/"+lecturelist[i]).getDownloadURL().then(function(url){
-          console.log("i is "+i);
-          console.log(typeof(url));
-          document.getElementById("cf").innerHTML+="<a href="+url+">"+lecturelist[i-1]+"</a><br>";
-          console.log(lecturelist+"       "+i);
-        })
+          load_lectures(i);
         }
 
         //printing assignments
+        function load_assign(y)
+        {
+          storageref.child(data.department+"/"+data.coursecode+"/"+assignlist[y]).getDownloadURL().then(function(url){
+            console.log("j is "+y);
+            a.innerHTML+="<a href="+url+">"+assignlist[y]+"</a><br>";
+            console.log(assignlist+"       "+y);
+          })
+        }
         for(var j=0;j<assignlist.length;j++)
         {
           console.log("j is "+j);
-        storageref.child(data.department+"/"+data.coursecode+"/"+assignlist[j]).getDownloadURL().then(function(url){
-          console.log("j is "+j);
-          document.getElementById("cf").innerHTML+="<a href="+url+">"+assignlist[j-1]+"</a><br>";
-          console.log(assignlist+"       "+j);
-        })
+          load_assign(j);
         }
 
         //printing others
+        function load_others(z)
+        {
+          storageref.child(data.department+"/"+data.coursecode+"/"+otherslist[z]).getDownloadURL().then(function(url){
+            console.log("k is "+z);
+            o.innerHTML+="<a href="+url+">"+otherslist[z]+"</a><br>";
+            console.log(otherslist+ "       "+z);
+          })
+        }
         for(var k=0;k<otherslist.length;k++)
         {
           console.log("k is "+k);
-        storageref.child(data.department+"/"+data.coursecode+"/"+otherslist[k]).getDownloadURL().then(function(url){
-          console.log("k is "+k);
-          document.getElementById("cf").innerHTML+="<a href="+url+">"+otherslist[k-1]+"</a><br>";
-          console.log(otherslist+ "       "+k);
-        })
+          load_others(k);
         }
       })
   }
+
 }
 export default Show;
