@@ -444,3 +444,48 @@ function home_redirect()
 {
   window.location.assign("https://coursedbiitk.firebaseapp.com/home");
 }
+function download_files(file_type){
+  var url=window.location.href;
+  var temp=url.indexOf('files');
+  var dep_end=url.indexOf("@",temp);
+  var dep= decodeURIComponent(url.slice(temp+6,dep_end));
+  var course= decodeURIComponent(url.slice(dep_end+1));
+  var database = firebase.database();
+  var newref=database.ref(dep+"/"+course);
+
+  newref.once('value').then(function(snap){
+      console.log(snap.val());
+      var data=snap.val();
+      var storageref=firebase.storage().ref();
+      var urls=[];
+      if(file_type=="notes")
+      {
+        urls_name=data.notes;
+      }
+      if(file_type=="assign")
+      {
+        urls_name=data.assign;
+      }
+      if(file_type=="others")
+      {
+        urls_name=data.others;
+      }
+      function down(x)
+      {
+        storageref.child(data.department+"/"+data.coursecode+"/"+x).getDownloadURL().then(function(url){
+          var link = document.createElement('a');
+          link.setAttribute('download', null);
+          link.style.display = 'none';
+          document.body.appendChild(link);
+          link.setAttribute('href', url);
+          link.click();
+          document.body.removeChild(link);
+        })
+      }
+      console.log(urls_name);
+      for(var f=0;f<urls_name.length;f++)
+      {
+        down(urls_name[f]);
+      }
+    })
+}
