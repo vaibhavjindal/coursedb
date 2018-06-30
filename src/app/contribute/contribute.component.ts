@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
 
 @Component({
   selector: 'app-contribute',
