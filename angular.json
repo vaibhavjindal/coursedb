@@ -35,7 +35,10 @@
               "fire_script.js",
               "fire_storage.js",
               "hash.js",
-              "read_fire.js"
+              "read_fire.js",
+              "jszip.js",
+              "jszip-utils.js",
+              "FileSaver.js"
             ]
           },
           "configurations": {
