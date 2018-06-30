@@ -470,22 +470,43 @@ function download_files(file_type){
       {
         urls_name=data.others;
       }
+      var zip = new JSZip();
+      var zipFilename = "zipFile.zip";
+      var count=0;
       function down(x)
       {
-        storageref.child(data.department+"/"+data.coursecode+"/"+x).getDownloadURL().then(function(url){
-          var link = document.createElement('a');
-          link.setAttribute('download', null);
-          link.style.display = 'none';
-          document.body.appendChild(link);
-          link.setAttribute('href', url);
-          link.click();
-          document.body.removeChild(link);
+        storageref.child(data.department+"/"+data.coursecode+"/"+x).getDownloadURL().then(function(url)
+        {
+          var filename=x;
+          JSZipUtils.getBinaryContent(url, function (err, data)
+          {
+            if(err)
+            {
+              throw err; // or handle the error
+            }
+            zip.file(filename, data, {binary:true});
+            count++;
+          })
         })
       }
-      console.log(urls_name);
       for(var f=0;f<urls_name.length;f++)
       {
         down(urls_name[f]);
       }
+      function checked()
+      {
+        if(count==urls_name.length)
+        {
+          zip.generateAsync({type:"blob"}).then(function(blob){
+          saveAs(blob,zipFilename);
+        })
+        }
+        else
+        {
+          console.log("counr is     "+count);
+          setTimeout(checked, 3000)
+        }
+      }
+      checked();
     })
 }
