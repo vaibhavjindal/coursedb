@@ -22,9 +22,6 @@ class Show{
         var assignlist=data.assign;
         var otherslist=data.others;
         var storageref=firebase.storage().ref();
-        console.log(lecturelist.length);
-        console.log(assignlist.length);
-        console.log(otherslist.length);
         console.log(typeof(lecturelist));
         console.log(typeof(assignlist));
         console.log(typeof(otherslist));
@@ -38,12 +35,19 @@ class Show{
             console.log(lecturelist+"       "+x);
           })
         }
-        for(var i=0;i<lecturelist.length;i++)
+        if(typeof(lecturelist) != "undefined")
         {
-          console.log("i is "+i);
-          load_lectures(i);
+          for(var i=0;i<lecturelist.length;i++)
+          {
+            console.log("i is "+i);
+            load_lectures(i);
+          }
         }
-
+        else
+        {
+          document.getElementById("l_notes").style.display='none';
+          document.getElementById("notes_download").style.display='none';
+        }
         //printing assignments
         function load_assign(y)
         {
@@ -53,12 +57,19 @@ class Show{
             console.log(assignlist+"       "+y);
           })
         }
-        for(var j=0;j<assignlist.length;j++)
+        if(typeof(assignlist) != "undefined")
         {
-          console.log("j is "+j);
-          load_assign(j);
+          for(var j=0;j<assignlist.length;j++)
+          {
+            console.log("j is "+j);
+            load_assign(j);
+          }
         }
-
+        else
+        {
+          document.getElementById("l_assign").style.display='none';
+          document.getElementById("assign_download").style.display='none';
+        }
         //printing others
         function load_others(z)
         {
@@ -68,10 +79,18 @@ class Show{
             console.log(otherslist+ "       "+z);
           })
         }
-        for(var k=0;k<otherslist.length;k++)
+        if(typeof(otherslist) != "undefined")
         {
-          console.log("k is "+k);
-          load_others(k);
+          for(var k=0;k<otherslist.length;k++)
+          {
+            console.log("k is "+k);
+            load_others(k);
+          }
+        }
+        else
+        {
+          document.getElementById("l_others").style.display='none';
+          document.getElementById("others_download").style.display='none';
         }
       })
   }
