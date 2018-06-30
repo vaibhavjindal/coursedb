@@ -23,18 +23,18 @@ export class DepartmentComponent implements OnInit {
   ) {
     route.params.subscribe(val => {
     this.getDept();
-    new Fetch().fetch_data(this.dept.name);
+    
   });
   }
 
   ngOnInit() {
-
   }
 
   getDept(): void {
   const link = this.route.snapshot.paramMap.get('link');
   this.srvService.getDept(link)
     .subscribe(dept => this.dept = dept);
+  new Fetch().fetch_data(this.dept.name);
  }
 
  
