@@ -10,41 +10,16 @@ var url="https://coursedbiitk.firebaseio.com/"+str+".json";
   request.send();
   request.onload=function(){
     objdata=request.response;
-  }
-
-
-
-
-    var database = firebase.database();
+    var refs=[];
+    var ccodes_name=[];
     var dep=str;
-   // console.log(dep);
-    var dataref=database.ref(dep);
-   // console.log(dataref);
-    dataref.once('value').then(function(snapshot){
-      console.log(snapshot.key);
-      var refs=[];
-      var cname='';
-      function recur_data(obj)
-      {
-       //   console.log("Hi recursion");
-          cname=objdata[obj.key]['coursename'];
-          console.log(cname)
-          refs.push(obj.key+'@'+cname);
-
-          if(obj.left.key)
-          {
-            recur_data(obj.left);
-          }
-          if(obj.right.key)
-          {
-            recur_data(obj.right);
-          }
-      }
-      recur_data(snapshot.node_.children_.root_);
+    for(var key in objdata){
+      refs.push(objdata[key]['coursecode']+'@'+objdata[key]['coursename'])
+    }
      // console.log(snapshot.node_.children_.root_);
      // console.log(refs);
       var ccodes=[];
-      var ccodes_name=[];
+      
       for (var i=0;i<refs.length;i++){
         if(refs[i].search(/\d/)==3){
           var ccode=refs[i].slice(0,7);
@@ -69,7 +44,7 @@ var url="https://coursedbiitk.firebaseio.com/"+str+".json";
           document.getElementById("dis").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/courses/@'+dep+'@'+ccodes[i]+'">'+ccodes_name[i]+'</a><br>';
       }
 
-    })
+    }
   }
 }
 export default Fetch;
