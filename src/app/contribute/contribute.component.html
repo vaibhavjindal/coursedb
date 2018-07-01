@@ -1,17 +1,20 @@
-<h1 align="center">Verification Portal</h1>
+<br>
+<mat-card tabindex="0" class="card">
+	<mat-card-title><h1 align="center">Contribute</h1></mat-card-title>
 
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <small id="emailHelp" class="form-text text-muted">Please enter your email id. We will send you a verification mail.</small>
-  </div>
+  <img mat-card-image src="http://mimiandeunice.com/wp-content/uploads/2011/01/ME_252_Contribution.png">
+	<div align="center">
+	<mat-card-content>
+		<div class="text">Help us expand our collection!<br>IITK students and professors can help us by uploading course data.</div>
+	</mat-card-content>
+	<form class="example-form">
+	  <mat-form-field class="example-full-width">
+	    <input matInput placeholder="IITK Email Id" id="exampleInputEmail1"	>
+	  </mat-form-field>
+	</form>
+	<mat-card-actions>
+  		<button mat-raised-button color="primary" onclick="send_email()" id="clickbut">Send Verification E-mail</button>
+  	</mat-card-actions>
+  	</div>
+</mat-card>
 
-<br><br><br><br><br>
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="IITK Email Id" id="exampleInputEmail1"	>
-  </mat-form-field>
-</form>
-  <button class="btn btn-primary" onclick="send_email()" id="clickbut">Send Verification e-mail</button>
-
- 
