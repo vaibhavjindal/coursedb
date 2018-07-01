@@ -20,6 +20,7 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import 'hammerjs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatDividerModule} from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {MatInputModule} from '@angular/material/input';
     MatCardModule,
     MatCheckboxModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
