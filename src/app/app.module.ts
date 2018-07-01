@@ -20,6 +20,7 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import 'hammerjs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 @NgModule({
@@ -50,6 +51,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDividerModule,
     MatRadioModule,
     MatSelectModule
   ],

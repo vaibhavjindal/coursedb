@@ -1,4 +1,9 @@
-div{    
-  margin-left: 15vw; 
+div{
+  margin-left: 13%;
+  margin-right: 13%;
   padding: 0px 10px;
+  text-align: center
+}
+p{
+  text-align: center;
 }

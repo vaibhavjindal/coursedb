@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,ViewEncapsulation } from '@angular/core';
 import { Dept } from '../dept';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import {MatDividerModule} from '@angular/material/divider';
 
 import { SrvService }  from '../srv.service';
 
@@ -23,7 +24,7 @@ export class DepartmentComponent implements OnInit {
   ) {
     route.params.subscribe(val => {
     this.getDept();
-    
+
   });
   }
 
@@ -37,6 +38,5 @@ export class DepartmentComponent implements OnInit {
   new Fetch().fetch_data(this.dept.name);
  }
 
- 
-}
 
+}
