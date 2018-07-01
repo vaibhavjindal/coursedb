@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
+
 
 /// <reference path="../../../show_files.d.ts" />
 import Show from '../../../show_files';

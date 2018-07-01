@@ -50,28 +50,28 @@ class Fetchbycc{
     if(y1718.length>0){
       document.getElementById("fetchbycc").innerHTML+='2017-2018<br>';
       for (var i=0;i<y1718.length;i++){
-        document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1718[i]+'">'+y1718[i]+'</a><br>';
+        document.getElementById("fetchbycc").innerHTML+='<a href="http://localhost:4200/course-files/'+dep+'@'+y1718[i]+'">'+y1718[i]+'</a><br>';
       }
     }
 
     if(y1617.length>0){
       document.getElementById("fetchbycc").innerHTML+='2016-2017<br>';
       for (var i=0;i<y1617.length;i++){
-        document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1617[i]+'">'+y1617[i]+'</a><br>';
+        document.getElementById("fetchbycc").innerHTML+='<a href="http://localhost:4200/course-files/'+dep+'@'+y1617[i]+'">'+y1617[i]+'</a><br>';
       }
     }
 
     if(y1516.length>0){
       document.getElementById("fetchbycc").innerHTML+='2015-2016<br>';
       for (var i=0;i<y1516.length;i++){
-        document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1516[i]+'">'+y1516[i]+'</a><br>';
+        document.getElementById("fetchbycc").innerHTML+='<a href="http://localhost:4200/course-files/'+dep+'@'+y1516[i]+'">'+y1516[i]+'</a><br>';
       }
     }
 
     if(others.length>0){
       document.getElementById("fetchbycc").innerHTML+='Others<br>';
       for (var i=0;i<others.length;i++){
-        document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+others[i]+'">'+others[i]+'</a><br>';
+        document.getElementById("fetchbycc").innerHTML+='<a href="http://localhost:4200/course-files/'+dep+'@'+others[i]+'">'+others[i]+'</a><br>';
       }
     }
     })
