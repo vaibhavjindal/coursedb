@@ -1,0 +1,29 @@
+.card{
+	max-width: 40%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img{
+	max-height: 700px;
+    display: block;
+}
+
+
+.text{
+	font-size: 20px;
+}
+
+ @media screen and (max-width: 768px) {
+	.card{
+		max-width: 100%;
+		display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	} 	
+
+	.text{
+		font-size: 14px;
+	}
+}
