@@ -38,3 +38,11 @@ img{
   height: 30px;
   background-color: #4CAF50;
 }
+
+#random {
+  visibility: hidden;
+}
+
+#notes {
+  visibility: hidden;
+}

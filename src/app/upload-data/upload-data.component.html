@@ -13,7 +13,96 @@
 <p id="hello"></p>
 <button routerLink="/upload-files">Next</button>
  -->
-<img src="https://www.techtricksnow.com/wp-content/uploads/2017/05/fb.png" onload="hellonikhil()" >
+<!-- <img src="https://www.techtricksnow.com/wp-content/uploads/2017/05/fb.png" onload="hellonikhil()" > -->
+
+
+<div class="example-container">
+
+
+  <mat-card>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Please Enter Name" id='upname'>
+  </mat-form-field>
+</mat-card>
+
+<br>
+
+
+<mat-card>
+<label>You are:</label>
+<br>
+<mat-radio-group id='des'>
+  <mat-radio-button value="Student" name='desig'>Student</mat-radio-button><pre></pre>
+  <mat-radio-button value="Professor" name='desig'>Professor</mat-radio-button>
+</mat-radio-group>
+</mat-card>
+<br>
+
+
+<mat-card>
+  <mat-form-field>
+  <mat-select placeholder="Department" id='department' (onchange)="onSelect(department.value)">
+    <mat-option *ngFor="let dept of depts" [value]="dept.name">
+      {{dept.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</mat-card>
+<br>
+
+<div *ngIf='selectedDept'>
+<mat-card>
+  <mat-form-field>
+  <mat-select placeholder="Course" id='course'>
+    <mat-option *ngFor="let course of selectedDept.courses"       [value]="course">
+      {{course}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+</mat-card>
+</div>
+
+<br>
+<mat-card>
+  <mat-form-field>
+  <mat-select placeholder="Year In Which Course Was Offered" id='year' >
+    <mat-option value='2017-2018'>2017-2018</mat-option>
+    <mat-option value='2016-2017'>2016-2017</mat-option>
+    <mat-option value='2015-2016'>2015-2016</mat-option>
+    <mat-option value='2014-2015'>2014-2015</mat-option>
+    <mat-option value='Others'>Others</mat-option>
+  </mat-select>
+</mat-form-field>
+</mat-card>
+
+<br>
+<mat-card>
+  <label>Semester</label>
+  <br>
+  <mat-radio-group id='sem'>
+  <mat-radio-button value="Odd" name='sem'>Odd</mat-radio-button>
+  <mat-radio-button value="Even" name='sem'>Even</mat-radio-button>
+   <mat-radio-button value="Summers" name='sem'>Summers</mat-radio-button>
+  <mat-radio-button value="Dont know" name='sem'>Don't Know</mat-radio-button>
+</mat-radio-group>
+</mat-card>
+
+
+<br>
+<button mat-raised-button type='file' color='primary' id='random'>Upload Files</button>
+<br>
+<label>Please select notes to upload</label>
+<br>
+<label for="notes" class='mat-raised-button mat-primary'>Choose Files</label>
+<input class="ng-hide" id="notes" multiple type="file" />
+
+
+</div>
+
+
+
+
 <div class="form-group">
 <label for="upname">Name</label>
 <input type="text" class="form-control" id="upname" placeholder="Enter your name">
