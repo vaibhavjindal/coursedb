@@ -51,7 +51,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDividerModule
+    MatDividerModule,
     MatRadioModule,
     MatSelectModule
   ],
