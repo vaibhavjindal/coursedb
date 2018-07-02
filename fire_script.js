@@ -518,3 +518,11 @@ function download_files(file_type){
       checked();
     })
 }
+
+
+function disp_iframe(url) {
+
+  var idisplay=document.getElementById('thisid');
+  idisplay.innerHTML="<iframe src='"+url+"' style='width:1166px;height:590px;'></iframe>"
+
+}
