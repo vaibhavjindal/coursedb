@@ -3,6 +3,9 @@ import { Dept } from '../dept';
 import { SrvService } from '../srv.service';
 import {MatRadioModule} from '@angular/material/radio';
 
+/// <reference path="../../../upload_data.d.ts" />
+import Upload from '../../../upload_data';
+
 @Component({
   selector: 'app-upload-data',
   templateUrl: './upload-data.component.html',
@@ -14,7 +17,11 @@ export class UploadDataComponent implements OnInit {
   depts: Dept[];
   selectedDept: Dept;
   permission: number;
-  selected = 'Aerospace Engineering';
+  s_dept : string;
+  s_course : string;
+  s_year : string;
+  semester: string;
+  designation: string;
 
   getDepts(): void {
   this.srvService.getDepts()
@@ -38,4 +45,7 @@ export class UploadDataComponent implements OnInit {
   this.getDepts();
   }
 
+  fun(): void{
+    new Upload().upload_data(this.s_dept,this.s_course,this.s_year,this.semester,this.designation);
+  }
 }

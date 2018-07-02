@@ -11,8 +11,8 @@
     <button onclick="upload_data()">Upload_data</button>
 </pre>
 <p id="hello"></p>
-<button routerLink="/upload-files">Next</button>
- -->
+<button routerLink="/upload-files">Next</button> -->
+
 <!-- <img src="https://www.techtricksnow.com/wp-content/uploads/2017/05/fb.png" onload="hellonikhil()" > -->
 
 
@@ -28,14 +28,15 @@
       
       <label>You are:</label>
       <br>
-      <mat-radio-group id='des'>
+      <mat-radio-group id='des' [(ngModel)]="designation">
         <mat-radio-button value="Student" name='desig'>Student </mat-radio-button><br>
         <mat-radio-button value="Professor" name='desig'>Professor</mat-radio-button>
       </mat-radio-group>
       <br><br>
 
+
       <mat-form-field>
-        <mat-select placeholder="Department" id='department'>
+        <mat-select placeholder="Department" [(value)]="s_dept">
           <mat-option *ngFor="let dept of depts" [value]="dept.name" (click)="onSelect(dept.name)">
             {{dept.name}}
           </mat-option>
@@ -45,9 +46,8 @@
     <div *ngIf='selectedDept'>
       <br>
       <mat-form-field>
-      <mat-select placeholder="Course">
-        <mat-option *ngFor="let course of selectedDept.courses"       [value]='course' >
-
+      <mat-select placeholder="Course" [(value)]="s_course">
+        <mat-option *ngFor="let course of selectedDept.courses" [value]='course'>
           {{course}}
         </mat-option>
       </mat-select>
@@ -58,7 +58,7 @@
 
 <br>
       <mat-form-field>
-      <mat-select placeholder="Year In Which Course Was Offered" id='year' >
+      <mat-select placeholder="Year In Which Course Was Offered" [(value)]='s_year'>
         <mat-option value='2017-2018'>2017-2018</mat-option>
         <mat-option value='2016-2017'>2016-2017</mat-option>
         <mat-option value='2015-2016'>2015-2016</mat-option>
@@ -72,16 +72,36 @@
 
       <label>Semester</label>
       <br>
-      <mat-radio-group id='sem' layout='row'>
-      <mat-radio-button value="Odd" name='sem'>Odd</mat-radio-button>
+      <mat-radio-group id='sem' layout='row' [(ngModel)]='semester'>
+      <mat-radio-button value="Odd" name='sem' id='odd'>Odd</mat-radio-button>
       <mat-radio-button value="Even" name='sem'>Even</mat-radio-button>
        <mat-radio-button value="Summers" name='sem'>Summers</mat-radio-button>
       <mat-radio-button value="Dont know" name='sem'>Don't Know</mat-radio-button>
     </mat-radio-group>
 
 
+<div class="form-group">
+    <label for="notes">Notes</label>
+    <input type="file" class="form-control-file" id="notes" name="note" multiple>
+</div>
+  <p id="notesdisplay"></p>
 
-    <br>
+
+<div class="form-group">
+    <label for="assign">Assignments</label>
+    <input type="file" class="form-control-file" id="assign" name="assignments" multiple>
+</div>
+
+  <p id="assigndisplay"></p>
+
+
+<div class="form-group">
+    <label for="others">Others</label>
+    <input type="file" class="form-control-file" id="others" name="other" multiple>
+</div>
+  <p id="othersdisplay"></p>
+
+<!--     <br>
     <button mat-raised-button type='file' color='primary' id='random'>Upload Files</button>
     <br>
     <label>Please select notes to upload</label>
@@ -102,9 +122,9 @@
     <br>
     <label for='others' class='mat-raised-button mat-primary'>Other Files</label>
     <input type="file" id='others' multiple name="others">
-    <br>
+    <br> -->
 
-    <button mat-raised-button color='primary' onclick="upload_data()" id='a'>Submit</button>
+    <button mat-raised-button color='primary' (click)="fun()" id='a'>Submit</button>
 
   </mat-card>
 </div>
@@ -243,4 +263,4 @@
 
 <button class="btn btn-primary" onclick="upload_data()" id="a">Submit</button>
 <p id="err"></p>
- -->
+-->

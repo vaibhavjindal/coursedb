@@ -8,36 +8,7 @@ img{
 	height: 100px;
 	width:100px;
 }
-#notesProgress {
-  width: 500px;
-  background-color: #ddd;
-}
 
-#notesBar {
-  width: 1px;
-  height: 30px;
-  background-color: #4CAF50;
-}
-#assignProgress {
-  width: 500px;
-  background-color: #ddd;
-}
-
-#assignBar {
-  width: 1px;
-  height: 30px;
-  background-color: #4CAF50;
-}
-#othersProgress {
-  width: 500px;
-  background-color: #ddd;
-}
-
-#othersBar {
-  width: 1px;
-  height: 30px;
-  background-color: #4CAF50;
-}
 
 #random {
   visibility: hidden;
