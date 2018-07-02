@@ -51,12 +51,9 @@ import {MatSelectModule} from '@angular/material/select';
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
-<<<<<<< HEAD
     MatDividerModule
-=======
     MatRadioModule,
     MatSelectModule
->>>>>>> 70b864268bafc7e380b8801606f87abe37723455
   ],
   providers: [],
   bootstrap: [AppComponent]
