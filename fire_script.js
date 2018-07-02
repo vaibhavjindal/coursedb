@@ -523,6 +523,6 @@ function download_files(file_type){
 function disp_iframe(url) {
 
   var idisplay=document.getElementById('thisid');
-  idisplay.innerHTML="<iframe src='"+url+"' style='width:1166px;height:590px;'></iframe>"
+  idisplay.innerHTML="<iframe scrolling='no' src='"+url+"' style='width:100%;height:100%;'></iframe>"
 
 }

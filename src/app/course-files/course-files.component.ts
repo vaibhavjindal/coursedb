@@ -13,6 +13,7 @@ import Show from '../../../show_files';
   styleUrls: ['./course-files.component.css']
 })
 export class CourseFilesComponent implements OnInit {
+	
 
   constructor() { }
 

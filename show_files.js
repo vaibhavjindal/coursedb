@@ -7,10 +7,11 @@ class Show{
   	var course= decodeURIComponent(url.slice(dep_end+1));
   	var database = firebase.database();
   	var newref=database.ref(dep+"/"+course);
+
   	// document.getElementById("cf").innerHTML+=dep+">"+course+"<br>";
-    document.getElementById("l_notes").innerHTML+="Lecture Notes<br>";
-    document.getElementById("l_assign").innerHTML+="Assignments<br>";
-    document.getElementById("l_others").innerHTML+="others<br>";
+  
+  	//document.getElementById("cf").innerHTML+=dep+">"+course+"<br>";
+  
     var l=document.getElementById("l_notes");
     var a=document.getElementById("l_assign");
     var o=document.getElementById("l_others");
@@ -54,7 +55,7 @@ class Show{
         {
           storageref.child(data.department+"/"+data.coursecode+"/"+assignlist[y]).getDownloadURL().then(function(url){
           //  console.log("j is "+y);
-            a.innerHTML+="<a href="+url+">"+assignlist[y]+"</a><br>";
+            a.innerHTML+="<button class='w3-button w3-block w3-green' onclick=disp_iframe('"+url+"')>"+assignlist[y]+"</button>";
           //  console.log(assignlist+"       "+y);
           })
         }
@@ -76,7 +77,7 @@ class Show{
         {
           storageref.child(data.department+"/"+data.coursecode+"/"+otherslist[z]).getDownloadURL().then(function(url){
          //   console.log("k is "+z);
-            o.innerHTML+="<a href="+url+">"+otherslist[z]+"</a><br>";
+            o.innerHTML+="<button class='w3-button w3-block w3-indigo' onclick=disp_iframe('"+url+"')>"+otherslist[z]+"</button>";;
          //   console.log(otherslist+ "       "+z);
           })
         }
