@@ -317,3 +317,11 @@ function download_files(file_type){
       checked();
     })
 }
+
+
+function disp_iframe(url) {
+
+  var idisplay=document.getElementById('thisid');
+  idisplay.innerHTML="<iframe scrolling='no' src='"+url+"' style='width:100%;height:100%;'></iframe>"
+
+}

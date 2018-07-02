@@ -1,23 +1,85 @@
 
-<br>
-<br>
-<mat-card>
-	<mat-card-title><p id="cf" align></p></mat-card-title>
-	
 
-	<p id="l_notes">
-	</p>
-	<button onclick="download_files('notes')" id="notes_download">Download Lecture Notes</button>
-	<p id="lecture_progress">
-	</p>
-	<p id="l_assign">
-	</p>
-	<button onclick="download_files('assign')" id="assign_download">Download Assignments</button>
-	<p id="assign_progress">
-	</p>
-	<p id="l_others">
-	</p>
-	<button onclick="download_files('others')" id="others_download">Download Other Files</button>
-	<p id="others_progress">
-	</p>
-</mat-card>
+<mat-sidenav-container class="example-container">
+
+  <mat-sidenav mode="side" opened style='width:15%;'>
+
+  	
+
+<!-- 	<mat-card-title><h6 id="cf"></h6></mat-card-title>
+ -->	
+ 	<mat-accordion>
+ 		<mat-expansion-panel>
+ 			<mat-expansion-panel-header>
+ 				<mat-panel-title>
+ 					Lecture Notes
+ 				</mat-panel-title>
+ 			</mat-expansion-panel-header>
+
+ 			<div id="l_notes">
+			</div>
+
+			<button onclick="download_files('notes')" id="notes_download">Download Lecture Notes
+			</button>
+			
+			<p id="lecture_progress">
+			</p>
+		</mat-expansion-panel>
+
+		<br>
+	</mat-accordion>
+
+
+	<mat-accordion>
+
+		<mat-expansion-panel>
+			<mat-expansion-panel-header>
+				<mat-panel-title>
+					Assingments
+				</mat-panel-title>
+			</mat-expansion-panel-header>
+
+			<p id="l_assign">
+			</p>
+			<button onclick="download_files('assign')" id="assign_download">Download Assignments
+			</button>
+			<p id="assign_progress">
+			</p>
+		</mat-expansion-panel>
+
+	</mat-accordion>
+	
+	<br>
+
+	<mat-accordion>
+		<mat-expansion-panel>
+			<mat-expansion-panel-header>
+				<mat-panel-title>
+					Others
+				</mat-panel-title>
+			</mat-expansion-panel-header>
+
+			<p id="l_others">
+			</p>
+
+			<button onclick="download_files('others')" id="others_download">Download Other Files
+			</button>
+
+			<p id="others_progress">
+			</p>
+		</mat-expansion-panel>
+	</mat-accordion>
+
+</mat-sidenav>
+
+  <mat-sidenav-content>
+  	<p id='thisid' style="height:99%"></p>
+</mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+

@@ -13,7 +13,8 @@ import { CourseFilesComponent } from './course-files/course-files.component';
 import { HomeComponent } from './home/home.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ThanksComponent } from './thanks/thanks.component';
-import { MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule, MatCardModule } from '@angular/material';
+import { MatToolbarModule, MatSidenavModule, MatIconModule, MatCardModule } from '@angular/material';
+import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {LayoutModule} from '@angular/cdk/layout';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
@@ -23,6 +24,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
+import {MatExpansionModule} from '@angular/material/expansion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +55,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatDividerModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
