@@ -1,6 +1,7 @@
 class Fetch{
   fetch_data(str)
   {
+
 var url="https://coursedbiitk.firebaseio.com/"+str+".json";
   var request=new XMLHttpRequest();
   var objdata;
@@ -38,12 +39,21 @@ var url="https://coursedbiitk.firebaseio.com/"+str+".json";
       }
       ccodes.sort();
       ccodes_name.sort();
-
-      for (var i=0;i<ccodes.length;i++)
+      if(ccodes.length==0)
       {
-          document.getElementById("dis").innerHTML+='<a class="divLink" style="display:block" href="http://coursedbiitk.firebaseapp.com/courses/@'+dep+'@'+ccodes[i]+'">'+ccodes_name[i]+'</a><hr>';
+        document.getElementById("hide").style.display='none';
+        document.getElementById("nf").innerHTML="Oops! No Course data found for the Course";
       }
-
+      else
+      {
+        document.getElementById("hide").style.display='inline';
+        document.getElementById("nf").innerHTML="";
+        document.getElementById("dis").innerHTML+='<br>';
+        for (var i=0;i<ccodes.length;i++)
+        {
+            document.getElementById("dis").innerHTML+='<a style="display:block" href="http://localhost:4200/courses/@'+dep+'@'+ccodes[i]+'">'+ccodes_name[i]+'</a><hr>';
+        }
+      }
     }
   }
 }
