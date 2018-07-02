@@ -8,9 +8,9 @@ class Show{
   	var database = firebase.database();
   	var newref=database.ref(dep+"/"+course);
   	document.getElementById("cf").innerHTML+=dep+">"+course+"<br>";
-    document.getElementById("l_notes").innerHTML+="Lecture Notes<br>";
-    document.getElementById("l_assign").innerHTML+="Assignments<br>";
-    document.getElementById("l_others").innerHTML+="others<br>";
+    document.getElementById("l_notes").innerHTML+="<h4>Lecture Notes</h4><hr>";
+    document.getElementById("l_assign").innerHTML+="<h4>Assignments</h4><hr>";
+    document.getElementById("l_others").innerHTML+="<h4>Other Files</h4><hr>";
     var l=document.getElementById("l_notes");
     var a=document.getElementById("l_assign");
     var o=document.getElementById("l_others");
