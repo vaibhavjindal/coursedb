@@ -10,7 +10,20 @@ var config = {
 firebase.initializeApp(config);
 
 
+function sd_notes() {
+  var input = document.getElementById('notes');
+  document.getElementById("s_n1").innerHTML = input.files.length.toString()+" Note(s) Selected";
+}
 
+function sd_assignments() {
+  var input = document.getElementById('assign');
+  document.getElementById("s_a1").innerHTML = input.files.length.toString()+" Assignment(s) Selected";
+}
+
+function sd_others() {
+  var input = document.getElementById('others');
+  document.getElementById("s_o1").innerHTML = input.files.length.toString()+" Other File(s) Selected";
+}
 
 
 function timeset(data){

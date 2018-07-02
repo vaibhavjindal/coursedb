@@ -1,14 +1,12 @@
 class Upload{
   upload_data(str1,str2,str3,str4,str5)
   { 
-    console.log('1')
     var database = firebase.database();
     var insertdata={};
     insertdata.department=str1;
     try
     {
       var course=str2;
-
     }
     catch(err)
     { 

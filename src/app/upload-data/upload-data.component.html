@@ -1,105 +1,96 @@
-<!-- <pre >
-    Department:      <input type="text" id="department"><br>
-    Course Code:     <input type="text" id="coursecode"><br>
-    Course Name:     <input type="text" id="coursename"><br>
-    Year:            <input type="text" id="year"><br>
-    Sem:             <input type="radio" id="sem" value="Odd">Odd
-                     <input type="radio" id="sem" value="Even">Even<br>
-    Your Name:       <input type="text" id="upname"><br>
-    Your designation:<input type="radio" id="des" value="Student">Student
-                     <input type="radio" id="des" value="Professor">Professor<br>
-    <button onclick="upload_data()">Upload_data</button>
-</pre>
-<p id="hello"></p>
-<button routerLink="/upload-files">Next</button> -->
+
 
 <!-- <img src="https://www.techtricksnow.com/wp-content/uploads/2017/05/fb.png" onload="hellonikhil()" > -->
 
 
-<div class="example-container">
-
-  <mat-card>      
-      <p id='err'>hi this is p</p>
-      <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Please Enter Name" id='upname' >
-      </mat-form-field>
-      <br>
-      
-      <label>You are:</label>
-      <br>
-      <mat-radio-group id='des' [(ngModel)]="designation">
-        <mat-radio-button value="Student" name='desig'>Student </mat-radio-button><br>
-        <mat-radio-button value="Professor" name='desig'>Professor</mat-radio-button>
-      </mat-radio-group>
-      <br><br>
 
 
-      <mat-form-field>
-        <mat-select placeholder="Department" [(value)]="s_dept">
-          <mat-option *ngFor="let dept of depts" [value]="dept.name" (click)="onSelect(dept.name)">
-            {{dept.name}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+<mat-card class="card">  
+  <mat-card-header>    
+    <div mat-card-avatar class="example-header-image"></div>
+    <!--add onload hellonikhil()-->
+    <mat-card-title><h4>Verified User</h4></mat-card-title>
+  </mat-card-header>
+    
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Please Enter Your Name" id='upname' >
+    </mat-form-field>
+    <br>
+    
+    <label>You are an:</label>
+    <br>
+    <mat-radio-group id='des' [(ngModel)]="designation">
+      <mat-radio-button value="Student" name='desig'>IITK Student </mat-radio-button><br>
+      <mat-radio-button value="Professor" name='desig'>IITK Professor</mat-radio-button>
+    </mat-radio-group>
+    <br><br>
 
-    <div *ngIf='selectedDept'>
-      <br>
-      <mat-form-field>
-      <mat-select placeholder="Course" [(value)]="s_course">
-        <mat-option *ngFor="let course of selectedDept.courses" [value]='course'>
-          {{course}}
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Department" [(value)]="s_dept">
+        <mat-option *ngFor="let dept of depts" [value]="dept.name" (click)="onSelect(dept.name)">
+          {{dept.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
 
-    </div>
+  <div *ngIf='selectedDept'>
+    <br>
+    <mat-form-field class="example-full-width">
+    <mat-select placeholder="Course" [(value)]="s_course">
+      <mat-option *ngFor="let course of selectedDept.courses" [value]='course'>
+        {{course}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  </div>
 
 
 <br>
-      <mat-form-field>
-      <mat-select placeholder="Year In Which Course Was Offered" [(value)]='s_year'>
-        <mat-option value='2017-2018'>2017-2018</mat-option>
-        <mat-option value='2016-2017'>2016-2017</mat-option>
-        <mat-option value='2015-2016'>2015-2016</mat-option>
-        <mat-option value='2014-2015'>2014-2015</mat-option>
-        <mat-option value='Others'>Others</mat-option>
-      </mat-select>
-    </mat-form-field>
+    <mat-form-field class="example-full-width">
+    <mat-select placeholder="Year In Which Course Was Offered" [(value)]='s_year'>
+      <mat-option value='2017-2018'>2017-2018</mat-option>
+      <mat-option value='2016-2017'>2016-2017</mat-option>
+      <mat-option value='2015-2016'>2015-2016</mat-option>
+      <mat-option value='2014-2015'>2014-2015</mat-option>
+      <mat-option value='Others'>Others</mat-option>
+    </mat-select>
+  </mat-form-field>
 
 
+  <br>
+
+    <label>Semester</label>
     <br>
-
-      <label>Semester</label>
-      <br>
-      <mat-radio-group id='sem' layout='row' [(ngModel)]='semester'>
-      <mat-radio-button value="Odd" name='sem' id='odd'>Odd</mat-radio-button>
-      <mat-radio-button value="Even" name='sem'>Even</mat-radio-button>
-       <mat-radio-button value="Summers" name='sem'>Summers</mat-radio-button>
-      <mat-radio-button value="Dont know" name='sem'>Don't Know</mat-radio-button>
-    </mat-radio-group>
+    <mat-radio-group id='sem' layout='row' [(ngModel)]='semester'>
+    <mat-radio-button value="Odd" name='sem' class="radio">Odd</mat-radio-button>
+    <mat-radio-button value="Even" name='sem' class="radio">Even</mat-radio-button>
+    <mat-radio-button value="Summers" name='sem' class="radio">Summers</mat-radio-button>
+    <mat-radio-button value="Dont know" name='sem' class="radio">Don't Know</mat-radio-button>
+  </mat-radio-group>
 
 
-<div class="form-group">
-    <label for="notes">Notes</label>
-    <input type="file" class="form-control-file" id="notes" name="note" multiple>
-</div>
-  <p id="notesdisplay"></p>
+  <br><br>
+  <label for="notes" class="mat-raised-button">Select Notes</label><h6 id="s_n1"></h6>
+  <input type="file" class="form-control-file" id="notes" name="note" multiple onchange="sd_notes()"/>
 
+  <label for="assign" class="mat-raised-button">Select Assignments</label><h6 id="s_a1"></h6>
+  <input type="file" class="form-control-file" id="assign" name="assignments" multiple onchange="sd_assignments()"/>
 
-<div class="form-group">
-    <label for="assign">Assignments</label>
-    <input type="file" class="form-control-file" id="assign" name="assignments" multiple>
-</div>
+  <label for="others" class="mat-raised-button">Select Other Files</label><h6 id="s_o1"></h6>
+  <input type="file" class="form-control-file" id="others" name="other" multiple onchange="sd_others()"/>
+  
+  <button mat-raised-button color='primary' (click)="fun()" id='a'>Submit</button>
+  <mat-card-content>
+    <div id='err'></div>
+    <div id="notesdisplay"></div>
+    <div id="othersdisplay"></div>
+    <div id="assigndisplay"></div>
+  </mat-card-content>
+</mat-card>
 
-  <p id="assigndisplay"></p>
-
-
-<div class="form-group">
-    <label for="others">Others</label>
-    <input type="file" class="form-control-file" id="others" name="other" multiple>
-</div>
-  <p id="othersdisplay"></p>
 
 <!--     <br>
     <button mat-raised-button type='file' color='primary' id='random'>Upload Files</button>
@@ -123,13 +114,6 @@
     <label for='others' class='mat-raised-button mat-primary'>Other Files</label>
     <input type="file" id='others' multiple name="others">
     <br> -->
-
-    <button mat-raised-button color='primary' (click)="fun()" id='a'>Submit</button>
-
-  </mat-card>
-</div>
-
-
 
 
 

@@ -48,4 +48,6 @@ export class UploadDataComponent implements OnInit {
   fun(): void{
     new Upload().upload_data(this.s_dept,this.s_course,this.s_year,this.semester,this.designation);
   }
+
 }
+

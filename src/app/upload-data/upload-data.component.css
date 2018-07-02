@@ -9,6 +9,20 @@ img{
 	width:100px;
 }
 
+.card{
+	max-width: 40%;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 50%;
+}
+
+.radio{
+	margin: 0 10px 0 10px;
+}
+.example-full-width {
+  width: 100%;
+}
 
 #random {
   visibility: hidden;
@@ -26,3 +40,20 @@ img{
   visibility: hidden;
 }
 
+.form-control-file{
+  visibility: hidden;
+}
+
+.example-header-image {
+  background-image: url('https://www.techtricksnow.com/wp-content/uploads/2017/05/fb.png');
+  background-size: cover;
+}
+
+#s_n {display:inline-block;margin-right:10px;} 
+#s_n1 {display:inline-block;margin-left: 10px;}
+
+#s_a {display:inline-block;margin-right:10px;} 
+#s_a1 {display:inline-block;margin-left: 10px;}
+
+#s_o {display:inline-block;margin-right:10px;} 
+#s_o1 {display:inline-block; margin-left: 10px;}
