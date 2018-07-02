@@ -17,11 +17,12 @@
 
 
 <div class="example-container">
+
   <mat-card>      
-      
+      <p id='err'>hi this is p</p>
       <mat-form-field>
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Please Enter Name" id='upname'>
+        <input matInput placeholder="Please Enter Name" id='upname' >
       </mat-form-field>
       <br>
       
@@ -44,8 +45,9 @@
     <div *ngIf='selectedDept'>
       <br>
       <mat-form-field>
-      <mat-select placeholder="Course" id='course'>
-        <mat-option *ngFor="let course of selectedDept.courses"       [value]="course">
+      <mat-select placeholder="Course">
+        <mat-option *ngFor="let course of selectedDept.courses"       [value]='course' >
+
           {{course}}
         </mat-option>
       </mat-select>
@@ -70,7 +72,7 @@
 
       <label>Semester</label>
       <br>
-      <mat-radio-group id='sem'>
+      <mat-radio-group id='sem' layout='row'>
       <mat-radio-button value="Odd" name='sem'>Odd</mat-radio-button>
       <mat-radio-button value="Even" name='sem'>Even</mat-radio-button>
        <mat-radio-button value="Summers" name='sem'>Summers</mat-radio-button>
@@ -84,8 +86,25 @@
     <br>
     <label>Please select notes to upload</label>
     <br>
-    <label for="notes" class='mat-raised-button mat-primary'>Choose Files</label>
-    <input class="ng-hide" id="notes" multiple type="file" />
+    <label for="notes" class='mat-raised-button mat-primary'>Choose Lecture Notes</label>
+    <input  id="notes" multiple type="file" />
+    <br>
+
+    <br>
+    <label>Please Select Assingments to Upload</label>
+    <br>
+    <label for='assign' class='mat-raised-button mat-primary'>Choose Assignments</label>
+    <input type='file' id='assign' name='assignments' multiple>
+    <br>
+
+    <br>
+    <label>Select Any Other Files</label>
+    <br>
+    <label for='others' class='mat-raised-button mat-primary'>Other Files</label>
+    <input type="file" id='others' multiple name="others">
+    <br>
+
+    <button mat-raised-button color='primary' onclick="upload_data()" id='a'>Submit</button>
 
   </mat-card>
 </div>
