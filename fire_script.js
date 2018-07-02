@@ -149,7 +149,7 @@ function upload_data()
   insertdata.others=o;
   function uploader()
   {
-  var reference=insertdata.department+"/"+insertdata.coursecode+insertdata.year+insertdata.sem+insertdata.upname;
+  var reference=insertdata.department+"/"+insertdata.coursecode+"-"+insertdata.year+"-"+insertdata.sem+"-"+insertdata.upname;
   var storageref = database.ref(reference);
   storageref.set(insertdata);
   var storageRef = firebase.storage().ref();
