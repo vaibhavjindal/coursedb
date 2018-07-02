@@ -27,16 +27,18 @@ function timeset(data){
 
 
 function upload_data()
-{
+{ console.log('this is upload')
   var database = firebase.database();
   var insertdata={};
+  console.log(document.getElementById('course').value);
   insertdata.department=document.getElementById("department").value;
   try
   {
     var course=document.getElementById("course").value;
+
   }
   catch(err)
-  {
+  { 
     document.getElementById("err").innerHTML="You must provide a field values";
     return;
   }

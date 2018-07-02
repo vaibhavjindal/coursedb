@@ -41,7 +41,7 @@ var url="https://coursedbiitk.firebaseio.com/"+str+".json";
 
       for (var i=0;i<ccodes.length;i++)
       {
-          document.getElementById("dis").innerHTML+='<a style="display:block" href="http://coursedbiitk.firebaseapp.com/courses/@'+dep+'@'+ccodes[i]+'">'+ccodes_name[i]+'</a><hr>';
+          document.getElementById("dis").innerHTML+='<a class="divLink" style="display:block" href="http://coursedbiitk.firebaseapp.com/courses/@'+dep+'@'+ccodes[i]+'">'+ccodes_name[i]+'</a><hr>';
       }
 
     }
