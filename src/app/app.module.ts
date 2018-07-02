@@ -21,7 +21,8 @@ import 'hammerjs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDividerModule} from '@angular/material/divider';
-
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,12 @@ import {MatDividerModule} from '@angular/material/divider';
     MatCheckboxModule,
     MatFormFieldModule,
     MatInputModule,
+<<<<<<< HEAD
     MatDividerModule
+=======
+    MatRadioModule,
+    MatSelectModule
+>>>>>>> 70b864268bafc7e380b8801606f87abe37723455
   ],
   providers: [],
   bootstrap: [AppComponent]

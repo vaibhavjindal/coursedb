@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Dept } from '../dept';
 import { SrvService } from '../srv.service';
+import {MatRadioModule} from '@angular/material/radio';
 
 @Component({
   selector: 'app-upload-data',
@@ -30,7 +31,8 @@ export class UploadDataComponent implements OnInit {
   }
 
   onSelect(key: string): void {
-    this.selectedDept = this.depts.find((val) => val.name == key)
+    this.selectedDept = this.depts.find((val) => val.name == key);
+    console.log(this.selectedDept.name);
   }
 
 }
