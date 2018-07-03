@@ -16,7 +16,26 @@
 	margin-left: 6.3%;
 	margin-right: 6.3%;
 }
-h3,h2
+h3,h2,p
 {
 	text-align: center;
+}
+.big-icon{
+	  font-size: 3rem;
+}
+.big-icon:hover{
+	font-size: 4rem;
+	color: #000000;
+}
+.fa-facebook {
+  background: #3B5998;
+	font-size: 3rem;
+  color: white;
+	width:50px;
+}
+.fa-facebook:hover{
+	font-size:4rem;
+}
+.fa {
+  margin: 15px 12px;
 }
