@@ -1,31 +1,22 @@
 
 #right
 {
-	float:right;
-	width:30%;
-	margin-right:5%;
-	height:40%;
-	display: inline-block;
-	margin-bottom: 50px;
-}
-#left
-{
-	float:left;
+	width:90%;
 	margin-left: 5%;
-	width:55%;
-	height:40%;
-	display: inline-block;
-	margin-bottom: 50px;
+}
+#al
+{
+	text-align: center;
 }
 .cont
 {
-	width:30%;
+	width:20%;
 	display: inline-block;
 	float:left;
-	margin-left: 1.5%;
-	margin-right: 1.5%;
+	margin-left: 6.3%;
+	margin-right: 6.3%;
 }
-h3
+h3,h2
 {
 	text-align: center;
 }
