@@ -33,7 +33,7 @@ class Show{
           storageref.child(data.department+"/"+data.coursecode+"/"+lecturelist[x]).getDownloadURL().then(function(url){
          //   console.log("i is "+x);
               
-            l.innerHTML+="<button class='w3-button w3-block w3-teal' onclick=disp_iframe('"+url+"')>"+lecturelist[x]+"</button>";
+            l.innerHTML+="<button style='padding-right:5%;white-space:normal;' class='w3-button w3-block w3-teal' onclick=disp_iframe('"+url+"')>"+lecturelist[x]+"</button>";
           //  console.log(lecturelist+"       "+x);
           })
         }
@@ -55,7 +55,7 @@ class Show{
         {
           storageref.child(data.department+"/"+data.coursecode+"/"+assignlist[y]).getDownloadURL().then(function(url){
           //  console.log("j is "+y);
-            a.innerHTML+="<button class='w3-button w3-block w3-green' onclick=disp_iframe('"+url+"')>"+assignlist[y]+"</button>";
+            a.innerHTML+="<button style='padding-right:5%;white-space:normal;' class='w3-button w3-block w3-green' onclick=disp_iframe('"+url+"')>"+assignlist[y]+"</button>";
           //  console.log(assignlist+"       "+y);
           })
         }
@@ -77,7 +77,7 @@ class Show{
         {
           storageref.child(data.department+"/"+data.coursecode+"/"+otherslist[z]).getDownloadURL().then(function(url){
          //   console.log("k is "+z);
-            o.innerHTML+="<button class='w3-button w3-block w3-indigo' onclick=disp_iframe('"+url+"')>"+otherslist[z]+"</button>";;
+            o.innerHTML+="<button style='padding-right:5%;' class='w3-button w3-block w3-indigo' onclick=disp_iframe('"+url+"')>"+otherslist[z]+"</button>";;
          //   console.log(otherslist+ "       "+z);
           })
         }

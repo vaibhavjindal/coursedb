@@ -247,7 +247,7 @@ function download_files(file_type){
   var course= decodeURIComponent(url.slice(dep_end+1));
   var database = firebase.database();
   var newref=database.ref(dep+"/"+course);
-  document.getElementById("info").innerHTML="Your files are Being processed . Downloading will begin shortly after.Processing may take time depending on your connection speed";
+  // document.getElementById("info").innerHTML="Your files are Being processed . Downloading will begin shortly after.Processing may take time depending on your connection speed";
 
   newref.once('value').then(function(snap){
       console.log(snap.val());
