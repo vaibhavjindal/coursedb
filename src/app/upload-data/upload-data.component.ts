@@ -17,11 +17,11 @@ export class UploadDataComponent implements OnInit {
   depts: Dept[];
   selectedDept: Dept;
   permission: number;
-  s_dept : string;
-  s_course : string;
-  s_year : string;
-  semester: string;
-  designation: string;
+  s_dept = "nas";
+  s_course ="nas";
+  s_year ="nas";
+  semester="nas";
+  designation="nas";
 
   getDepts(): void {
   this.srvService.getDepts()
@@ -30,7 +30,6 @@ export class UploadDataComponent implements OnInit {
   
   onSelect(key: string): void {
     this.selectedDept = this.depts.find((val) => val.name == key);
-    console.log(this.selectedDept.name);
   }
   
   up_files(key: number): void{
