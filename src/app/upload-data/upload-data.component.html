@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/vaibhavjindal/coursedb/master/src/app/upload-data/photo.jpg" style="height: 1px; width: 1px;" onload="hellonikhil()">
+<img src="https://raw.githubusercontent.com/vaibhavjindal/coursedb/master/src/app/upload-data/photo.jpg" style="height: 1px; width: 1px;">
 <mat-card class="card">  
   <mat-card-header>    
     <div mat-card-avatar class="example-header-image"></div>
@@ -7,7 +7,7 @@
     
     <mat-form-field class="example-full-width">
       <mat-label>Name</mat-label>
-      <input matInput placeholder="Please Enter Your Name" id='upname' >
+      <input matInput placeholder="Please Enter Your Name" id='upname' required>
     </mat-form-field>
     <br>
     
@@ -20,7 +20,7 @@
     <br><br>
 
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="example-full-width" required>
       <mat-select placeholder="Department" [(value)]="s_dept">
         <mat-option *ngFor="let dept of depts" [value]="dept.name" (click)="onSelect(dept.name)">
           {{dept.name}}
