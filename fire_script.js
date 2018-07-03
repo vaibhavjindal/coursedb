@@ -111,12 +111,6 @@ function hellonikhil()
 
 
 
-
-
-
-
-
-
 function gotData(data) {
 
 

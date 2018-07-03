@@ -14,3 +14,13 @@
 	left:0;
 	right: 0;
 }*/
+
+.mat-expansion-panel-body {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+#l_notes {
+	padding: 0;
+	margin: 0;
+}
