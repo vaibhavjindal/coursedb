@@ -12,9 +12,13 @@ import {MatButtonModule} from '@angular/material/button';
 })
 export class ContributeComponent implements OnInit{ 
 
-  constructor() {}
+  constructor() {
+  document.body.classList.add('bg-img-contribute');
+  }
 
   ngOnInit() {
+
+  	
   }
 
 }

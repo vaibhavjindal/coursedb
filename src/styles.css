@@ -1,2 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+
+.bg-img-contribute
+{
+    background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+
+
+.bg-img-about
+{
+    background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image(2).jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}

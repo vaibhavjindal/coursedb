@@ -20,22 +20,27 @@ h3,h2,p
 {
 	text-align: center;
 }
-.big-icon{
+
+.fa-github{
 	  font-size: 3rem;
 }
-.big-icon:hover{
-	font-size: 4rem;
-	color: #000000;
-}
+
+
 .fa-facebook {
-  background: #3B5998;
 	font-size: 3rem;
-  color: white;
+  color: black;
 	width:50px;
 }
+
 .fa-facebook:hover{
-	font-size:4rem;
+	filter: invert(50%);
 }
+
 .fa {
   margin: 15px 12px;
+}
+
+.card{
+	width:70%;
+	height:100%;
 }
