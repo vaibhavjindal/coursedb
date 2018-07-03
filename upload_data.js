@@ -1,22 +1,47 @@
 class Upload{
   upload_data(str1,str2,str3,str4,str5)
   { 
+    document.getElementById('err').innerHTML="";
     var database = firebase.database();
     var insertdata={};
-    insertdata.department=str1;
-    try
+
+    insertdata.upname=document.getElementById("upname").value;
+    if(insertdata.upname=="")
     {
-      var course=str2;
-    }
-    catch(err)
-    { 
-      document.getElementById("err").innerHTML="You must provide a field values";
+      document.getElementById("err").innerHTML="Please enter your name!";
       return;
     }
+
+    insertdata.des=str5;
+    if(insertdata.des=="nas")
+    {
+      document.getElementById("err").innerHTML="Please tell us whether you are a student or a professor!";
+      return;
+    }
+
+    insertdata.department=str1;
+    if(insertdata.department=="nas")
+    {
+      document.getElementById("err").innerHTML="Please select a department!";
+      return;
+    }
+
+    var course=str2;
+    if(course=="nas"){
+      document.getElementById("err").innerHTML="Please select a course!";
+      return;
+    }
+
     var ind=course.indexOf("-");
     insertdata.coursecode=course.slice(0,ind);
     insertdata.coursename=course.slice(ind+1,course.length);
+    
     insertdata.year=str3;
+    if(insertdata.year=="nas")
+    {
+      document.getElementById("err").innerHTML="Please select the year!";
+      return;
+    }    
     var temp='';
     for(var i=0;i<insertdata.year.length;i++)
     {
@@ -26,45 +51,18 @@ class Upload{
         temp+=insertdata.year[i];
     }
     insertdata.year=temp;
+    
     insertdata.sem=str4;
-    console.log(str4);
-    insertdata.upname=document.getElementById("upname").value;
-    console.log(document.getElementById("upname").value);
-    insertdata.des=str5;
-    console.log(str5);
+    if(insertdata.sem=="nas")
+    {
+      document.getElementById("err").innerHTML="Please select a semester!";
+      return;
+    }
+    
     var notes=document.getElementById("notes").files;
     var assign=document.getElementById("assign").files;
     var others=document.getElementById("others").files;
-    if(insertdata.department=="")
-    {
-      document.getElementById("err").innerHTML="You must provide a department name";
-      return;
-    }
-    if(insertdata.coursecode=="")
-    {
-      document.getElementById("err").innerHTML="You must select a course";
-      return;
-    }
-    if(insertdata.year=="")
-    {
-      document.getElementById("err").innerHTML="You must provide a year";
-      return;
-    }
-    if(insertdata.sem=="")
-    {
-      document.getElementById("err").innerHTML="You must select a semester";
-      return;
-    }
-    if(insertdata.upname=="")
-    {
-      document.getElementById("err").innerHTML="You must provide your name";
-      return;
-    }
-    if(insertdata.des=="")
-    {
-      document.getElementById("err").innerHTML="You must provide your designation";
-      return;
-    }
+
     if(notes.length+assign.length+others.length==0)
     {
       document.getElementById("err").innerHTML="You must provide at least one file to upload";
@@ -83,7 +81,7 @@ class Upload{
       }
       else
       {
-        document.getElementById("err").innerHTML="You do not appear to be who you claim you are!";
+        document.getElementById("err").innerHTML="You email id does not match with that of a student!";
         return;
       }
     }
@@ -95,7 +93,7 @@ class Upload{
       }
       else
       {
-        document.getElementById("err").innerHTML="You do not appear to be who you claim you are!";
+        document.getElementById("err").innerHTML="You email id does not match with that of a professor!";
         return;
       }
     }
@@ -134,7 +132,7 @@ class Upload{
     for(var i=0;i<notes.length;i++)
     {
       var file = notes[i];
-      document.getElementById("notesdisplay").innerHTML="uploading "+(i+1)+" of "+notes.length+" notes";
+      document.getElementById("notesdisplay").innerHTML="uploading "+notes.length+" notes ...";
         var mountainsRef = newref.child(file.name);
         //document.getElementById("notesBar").style.width="1px";
         var uptask=mountainsRef.put(file);
@@ -150,7 +148,7 @@ class Upload{
     for(var i=0;i<assign.length;i++)
     {
       var file = assign[i];
-      document.getElementById("assigndisplay").innerHTML="uploading "+(i+1)+" of "+assign.length+" assignments";
+      document.getElementById("assigndisplay").innerHTML="uploading "+assign.length+" assignments ...";
         var mountainsRef = newref.child(file.name);
         //document.getElementById("assignBar").style.width="1px";
         var uptask=mountainsRef.put(file);
@@ -166,7 +164,7 @@ class Upload{
     for(var i=0;i<others.length;i++)
     {
       var file = others[i];
-      document.getElementById("othersdisplay").innerHTML="uploading "+(i+1)+" of "+others.length+" other files";
+      document.getElementById("othersdisplay").innerHTML="uploading "+others.length+" other files ...";
         var mountainsRef = newref.child(file.name);
         //document.getElementById("othersBar").style.width="1px";
         var uptask=mountainsRef.put(file);
@@ -186,16 +184,10 @@ class Upload{
       window.location.assign("https://coursedbiitk.firebaseapp.com/thanks");
     }
     else {
-      console.log("Uploaded is     "+uploaded);
       setTimeout(redirecter, 3000);
     }
     }
     redirecter();
-    /*return new Promise(function (fulfill, reject){
-      //do stuff
-      fulfill(); //if the action succeeded
-      reject(); //if the action did not succeed
-  });*/
   }
   uploader();
   }
