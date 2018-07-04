@@ -33,6 +33,12 @@ h3,h2,p
   margin: 15px 12px;
 }
 
+#outer{
+	width:70%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:5%;
+}
 /*.card{
 	width:70%;
 	height:100%;
@@ -70,6 +76,10 @@ h3,h2,p
     .column {
         width: 100%;
         display: block;
+    }
+
+    #outer{
+    	width:100%;
     }
 }
 
