@@ -8,14 +8,7 @@
 {
 	text-align: center;
 }
-.cont
-{
-	width:20%;
-	display: inline-block;
-	float:left;
-	margin-left: 6.3%;
-	margin-right: 6.3%;
-}
+
 h3,h2,p
 {
 	text-align: center;
@@ -41,6 +34,25 @@ h3,h2,p
 }
 
 .card{
-	width:70%;
+	/*width:70%;*/
 	height:100%;
+	width: 80%;
+  margin: 10px auto;
+  opacity: 0.8;
+}
+
+
+
+.cont
+{
+	width:25%;
+	display: inline-block;
+	float:left;
+	margin-left: 5%;
+	margin-right: 3%;
+	
+}
+
+.mat-card-image {
+	height:200px;
 }

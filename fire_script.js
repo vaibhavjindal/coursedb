@@ -173,6 +173,7 @@ function gotData(data) {
     } */
 
     addkeys:function(){
+      var addstr='<select style="font-size:90pt;" size="10">'
       var counter=1;
       var searchobject=document.getElementById('data');
       for(var i=0;i<all.length;i++){
@@ -183,18 +184,26 @@ function gotData(data) {
 
             break;
           }
-        }
+        } 
+
+
+
           if(counter){
             console.log('adding values')
 
-        var opt=document.createElement('option');
-          opt.value=all[i];
-          opt.appendChild(document.createTextNode(all[i]));
-          document.getElementById('data').appendChild(opt);
+        // var opt=document.createElement('option');
+        //   opt.value=all[i];
+        //   opt.appendChild(document.createTextNode(all[i]));
+        //   document.getElementById('data').appendChild(opt);
+
+        addstr+='<option value="'+all[i]+'">'+all[i]+'</option>'
+
 
 
         }
       }
+      addstr+='</select>'
+      document.getElementById('data').innerHTML=addstr;
     }
 
 }
