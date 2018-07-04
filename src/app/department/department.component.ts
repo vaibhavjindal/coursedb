@@ -29,6 +29,7 @@ export class DepartmentComponent implements OnInit {
   }
 
   ngOnInit() {
+    document.body.classList.add('bg-img-department');
   }
 
   getDept(): void {

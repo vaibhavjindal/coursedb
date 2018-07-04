@@ -4,3 +4,27 @@ p{
 h1{
   text-align: center;
 }
+
+.card{
+	opacity: 0.85;
+	width:40%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 3%;
+	border-radius: 10px;
+}
+
+#course{
+	color: grey;
+}
+
+ @media screen and (max-width: 768px) {
+	.card{
+		opacity: 0.85;
+		width:100%;
+		margin-right: auto;
+		margin-left: auto;
+		margin-top: 3%;
+		border-radius: 10px;
+	}
+}

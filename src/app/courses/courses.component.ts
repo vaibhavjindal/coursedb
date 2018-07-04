@@ -13,7 +13,9 @@ export class CoursesComponent implements OnInit {
   dept: string;
   cocode: string;
 
-  constructor() { }
+  constructor() { 
+    document.body.classList.add('bg-img-courses');
+  }
 
   ngOnInit() {
   this.dept=getDepartment();

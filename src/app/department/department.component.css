@@ -1,4 +1,4 @@
-div{
+/*div{
   margin-left: 13%;
   margin-right: 13%;
   padding: 0px 10px;
@@ -6,4 +6,13 @@ div{
 }
 p{
   text-align: center;
+}
+*/
+.card{
+	opacity: 0.85;
+	width:40%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5%;
+	border-radius: 10px;
 }

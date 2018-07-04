@@ -40,6 +40,23 @@
     background-attachment: fixed;
 }
 
+.bg-img-courses
+{
+    background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image(3).jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+}
+
+.bg-img-department
+{
+    background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image(3).jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+}
 #container {
 z-index: -99;
   position:relative;
