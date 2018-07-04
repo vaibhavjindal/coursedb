@@ -4,7 +4,7 @@
 
 .container{
 	z-index: -99;
-	height:93vh;
+	height:auto;
 	background-size: cover
 }
 

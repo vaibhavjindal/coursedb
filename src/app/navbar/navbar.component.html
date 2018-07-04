@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="height: 7vh;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">CourseDB</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,19 +15,6 @@
           <a class="dropdown-item" *ngFor="let dept of depts" routerLink="/department/{{dept.link}}" (click)="clear()">{{dept.name}}</a>
         </div>
       </div>
-
-
-      <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Quick Links
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" routerLink="">Institute Compulsory Courses</a>
-          <a class="dropdown-item" routerLink="">ESOs and SOs</a>
-        </div>
-      </div>
-
-
     </div>
   </div>
 </nav>
