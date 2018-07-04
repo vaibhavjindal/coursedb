@@ -2,13 +2,6 @@
 	height: 40%;
 }
 
-
-.container{
-	z-index: -99;
-	height:auto;
-	background-size: cover
-}
-
 .card{
 	opacity: 0.95;
 	max-width: 50%;
