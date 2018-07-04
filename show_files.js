@@ -33,7 +33,7 @@ class Show{
           storageref.child(data.department+"/"+data.coursecode+"/"+lecturelist[x]).getDownloadURL().then(function(url){
          //   console.log("i is "+x);
               
-            l.innerHTML+="<a onclick=disp_iframe('"+url+"')><div align='center' style='background-color:#666'>"+lecturelist[x]+"</div></a>";
+            l.innerHTML+="<button style='padding-right:5%;white-space:normal;' class='w3-button w3-block w3-green' onclick=disp_iframe('"+url+"')>"+lecturelist[x]+"</button>";
           //  console.log(lecturelist+"       "+x);
           })
         }

@@ -25,3 +25,7 @@
 	margin: 0;
 }
 
+/deep/ .mat-expansion-panel {
+    background: #35383d;  /* replace skyblue with any color */ 
+}
+
