@@ -9,6 +9,7 @@
     margin-left: auto;
     margin-right: auto;
     max-height: 50%;
+    margin-top: 10%;
     border-radius: 10px;
 }
 
@@ -16,3 +17,12 @@
 	width: 90%;
 }
 
+ @media screen and (max-width: 768px) {
+	.card{
+		max-width: 100%;
+		display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-top: 30%;
+	} 	
+}
