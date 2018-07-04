@@ -201,8 +201,8 @@ function redirect_course()
   else{
     document.getElementById('course_enter').innerHTML='';
   var x=str.indexOf(' ');
-  var y=str.indexOf('(');
-  var z=str.indexOf(')');
+  var y=str.lastIndexOf('(');
+  var z=str.lastIndexOf(')');
   window.location='courses/@'+str.slice(y+1,z)+'@'+str.slice(0,x)
 
 }
