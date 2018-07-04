@@ -5,9 +5,10 @@
 .bg-img-contribute
 {
     background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image.jpg');
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; 
+    background-attachment: fixed;
 }
 
 
@@ -15,9 +16,10 @@
 .bg-img-about
 {
     background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image(2).jpg');
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover; 
+    background-attachment: fixed;
 }
 
 #container {
