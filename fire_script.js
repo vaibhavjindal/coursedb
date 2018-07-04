@@ -191,19 +191,17 @@ function gotData(data) {
           if(counter){
             console.log('adding values')
 
-        // var opt=document.createElement('option');
-        //   opt.value=all[i];
-        //   opt.appendChild(document.createTextNode(all[i]));
-        //   document.getElementById('data').appendChild(opt);
+          var opt=document.createElement('option');
+       //    opt.value=all[i];
+          var x=document.getElementById('myselect');
+          opt.text=all[i];
+          x.add(opt);
 
-        addstr+='<option value="'+all[i]+'">'+all[i]+'</option>'
 
 
 
         }
       }
-      addstr+='</select>'
-      document.getElementById('data').innerHTML=addstr;
     }
 
 }
@@ -238,11 +236,20 @@ function get_json(){
 function redirect_course()
 {
   var str=document.getElementById('search').value;
+  if(str=='')
+  {
+    document.getElementById('course_enter').innerHTML='<br>Please choose a course';
+    return;
+  }
+
+  else{
+    document.getElementById('course_enter').innerHTML='';
   var x=str.indexOf(' ');
   var y=str.indexOf('(');
   var z=str.indexOf(')');
   window.location='courses/@'+str.slice(y+1,z)+'@'+str.slice(0,x)
 
+}
 }
 function home_redirect()
 {
