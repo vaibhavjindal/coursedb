@@ -121,19 +121,12 @@ function gotData(data) {
   getdata:function(){
     var temp;
   window.all=[];
- // var depts=[];
-  //  var coursecode=[];
-   // var coursename=[];
-
 
     for(var dept in data){
-     // depts.push(dept);
-     // all.push(dept)
+    
 
       for(code in data[dept]){
-      //  coursecode.push(code)
-        //all.push(code)
-
+  
         name = data[dept][code]['coursename']
         code=data[dept][code]['coursecode']
         temp=code+' - '+name+'  ('+dept+')';
@@ -144,42 +137,15 @@ function gotData(data) {
     console.log(all);
   },
 
-   /* addkeys:function(){
-      console.log('inside addkeys');
-      console.log(all.length);
-      var tosearch=document.getElementById('search').value;
-      tosearch=tosearch.replace(/^"(.*)"$/, '$1');
-      tosearch=tosearch.toUpperCase();
-      for(var i=0;i<all.length;i++){
-        var counter=1;
-        var temp=all[i].toUpperCase();
-        if(temp.search(tosearch)){
-
-          var searchobject=document.getElementById('data');
-          for(var j=0;j<searchobject.children.length;j++){
-            if(all[i]==searchobject.children[j].value){
-              counter=0;
-              break;
-            }
-          }
-          if(counter){
-            var opt=document.createElement('option');
-          opt.value=all[i];
-          opt.appendChild(document.createTextNode(all[i]));
-          document.getElementById('data').appendChild(opt);
-          }
-        }
-      }
-    } */
+   
 
     addkeys:function(){
-      var addstr='<select style="font-size:90pt;" size="10">'
       var counter=1;
       var searchobject=document.getElementById('data');
       for(var i=0;i<all.length;i++){
         counter=1;
         for(var j=0;j<searchobject.children.length;j++){
-          if(all[i]==searchobject.children[j].value){
+          if(all[i]==searchobject.children[j].innerHTML){
             counter=0;
 
             break;
@@ -191,33 +157,23 @@ function gotData(data) {
           if(counter){
             console.log('adding values')
 
-          var opt=document.createElement('option');
-       //    opt.value=all[i];
-          var x=document.getElementById('myselect');
-          opt.text=all[i];
-          x.add(opt);
+         var opt=document.createElement('option');
+          opt.appendChild(document.createTextNode(all[i]));
+          document.getElementById('data').appendChild(opt);
 
 
 
 
         }
       }
+
+
     }
 
 }
 
 }
 
-
-/*function input_call(){
-  console.log('inside input call')
-var textinput=document.getElementById('search');
-document.getElementById('search').defaultValue='';
-var timeout_input=null;
-  clearTimeout(timeout_input);
-  timeout_input=setTimeout(obj.addkeys,700)
-
-}*/
 
 function get_json(){
   var url="https://coursedbiitk.firebaseio.com/.json";

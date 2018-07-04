@@ -11,7 +11,7 @@
 		  <img mat-card-image src="https://raw.githubusercontent.com/vaibhavjindal/images/master/Screenshot%20from%202018-07-04%2006-41-06.png" onload="get_json()">
 <!-- <img id="tick" src="https://raw.githubusercontent.com/vaibhavjindal/images/master/Screenshot%20from%202018-07-04%2006-41-06.png" align="center" onload="get_json()"> --><br>
 <mat-form-field class="example-full-field">
-<input matInput list='data' type='text' id='search' placeholder="Search Course" autofocus required>
+<input matInput list='data' type='text' id='search' placeholder="Search Course" autofocus>
 </mat-form-field>
 <br>
 <mat-card-actions>
@@ -19,7 +19,6 @@
  <p align="center" id='course_enter'></p>
 </mat-card-actions>
 <datalist id='data'>
-	<select id='myselect' onfocus='this.size="5";' onblur="this.size='1';" onchange='this.size="1"; this.blur()'></select>
 </datalist>
 </div>
 </mat-card>
