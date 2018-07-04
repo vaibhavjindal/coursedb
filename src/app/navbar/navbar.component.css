@@ -1,3 +1,13 @@
 img{
 	height:4vh;
 }
+
+a{
+	font-size: 20px;
+}
+
+ @media screen and (max-width: 768px) {
+	a{
+		font-size: 12px;
+	}
+}

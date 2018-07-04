@@ -36,7 +36,8 @@ export class UploadDataComponent implements OnInit {
     this.permission=key;
   }
 
-  constructor(private srvService: SrvService) { 
+  constructor(private srvService: SrvService) {
+  document.body.classList.add('bg-img-upload'); 
     
   }
 
