@@ -9,7 +9,7 @@ import { UploadDataComponent } from './upload-data/upload-data.component';
 import { CourseFilesComponent } from './course-files/course-files.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ThanksComponent } from './thanks/thanks.component';
-
+import { ForumComponent } from './forum/forum.component';
 
 const routes: Routes = [
   { path: 'courses/:ccode', component: CoursesComponent },
@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'contribute', component: ContributeComponent },
   { path: 'upload-data', component: UploadDataComponent },
   { path: 'course-files/:cname', component: CourseFilesComponent },
-  { path: 'thanks', component: ThanksComponent }
+  { path: 'thanks', component: ThanksComponent },
+  { path: 'forum', component: ForumComponent }
 ];
 
 @NgModule({
