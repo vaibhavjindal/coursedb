@@ -38,7 +38,8 @@
               "read_fire.js",
               "jszip.js",
               "jszip-utils.js",
-              "FileSaver.js"
+              "FileSaver.js",
+              "disqus.js"
             ]
           },
           "configurations": {
