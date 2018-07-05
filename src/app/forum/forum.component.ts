@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForumComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  document.body.classList.add('bg-img-forum')
+}
 
   ngOnInit() {
   }
