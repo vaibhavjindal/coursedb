@@ -7,10 +7,17 @@
     background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image.jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     background-attachment: fixed;
 }
-
+.bg-img-forum
+{
+    background-image: url('https://github.com/vaibhavjindal/coursedb/blob/master/books-3480058_1920.jpg?raw=true');
+    background-position: center center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 
 .bg-img-about
@@ -18,7 +25,7 @@
     background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image11.jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -27,7 +34,7 @@
     background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image5.jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -36,7 +43,7 @@
     background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image9.jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -45,7 +52,7 @@
     background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image(3).jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -54,7 +61,7 @@
     background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image(3).jpg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     background-attachment: fixed;
 }
 #container {
@@ -189,4 +196,3 @@ z-index: -99;
   -o-animation-delay: 0;
   animation-delay: 0;
 }
-

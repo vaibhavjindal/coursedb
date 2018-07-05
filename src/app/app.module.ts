@@ -26,6 +26,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { ForumComponent } from './forum/forum.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     HomeComponent,
     CoursesComponent,
     ThanksComponent,
+    ForumComponent,
   ],
   imports: [
     BrowserModule,
