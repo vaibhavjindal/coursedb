@@ -43,7 +43,7 @@ var url="https://coursedbiitk.firebaseio.com/"+str+".json";
       if(ccodes.length==0)
       {
         document.getElementById("hide").style.display='none';
-        document.getElementById("nf").innerHTML="Oops! No Course data found for the Course";
+        document.getElementById("nf").innerHTML="Oops! No Courses for this Department.";
       }
       else
       {
