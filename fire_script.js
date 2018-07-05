@@ -285,9 +285,16 @@ function download_files(file_type){
 }
 
 
-function disp_iframe(url) {
+function disp_iframe(url,id) {
 
+  color_button.style.background='orange';
+  color_button.style.color='black'
+  color_button=document.getElementById(id);
+  color_button.style.background='#35383d';
+  color_button.style.color='white';
   var idisplay=document.getElementById('thisid');
   idisplay.innerHTML="<iframe scrolling='no' src='"+url+"' style='width:100%;height:100%;'></iframe>"
 
 }
+
+window.onload=function(){ window.color_button=document.getElementById('demo')}

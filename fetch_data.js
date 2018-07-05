@@ -52,7 +52,7 @@ var url="https://coursedbiitk.firebaseio.com/"+str+".json";
         document.getElementById("dis").innerHTML+='<br>';
         for (var i=0;i<ccodes.length;i++)
         {
-            document.getElementById("dis").innerHTML+='<a style="display:block" href="http://localhost:4200/courses/@'+dep+'@'+ccodes[i]+'"><h5>'+ccodes_name[i]+'</h5></a><hr>';
+            document.getElementById("dis").innerHTML+='<a style="display:block" href="http://coursedbiitk.firebaseapp.com/courses/@'+dep+'@'+ccodes[i]+'"><h5>'+ccodes_name[i]+'</h5></a><hr>';
         }
       }
     }

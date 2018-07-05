@@ -1,19 +1,12 @@
 .example-container {
   position: absolute;
-  top: 8%;
+  top: 52.663px;
   bottom: 0;
   left: 0;
   right: 0;
   background: #eee;
 }
 
-/*#l_notes {
-	position: absolute;
-	top:0;
-	bottom:0;
-	left:0;
-	right: 0;
-}*/
 
 .mat-expansion-panel-body {
 	padding-left: 0;
@@ -26,6 +19,16 @@
 }
 
 /deep/ .mat-expansion-panel {
-    background: #35383d;  /* replace skyblue with any color */ 
+    background: #35383d; 
 }
 
+.newclass{
+	width: 15%;
+}
+
+ @media screen and (max-width: 768px) {
+ 	
+ 	.newclass{
+ 		width: 100%;
+ 	}
+ }
