@@ -14,15 +14,15 @@
  					<font color='#d3d3d3'>Lecture Notes</font>
  				</mat-panel-title>
  			</mat-expansion-panel-header>
+ 			<button onclick="download_files('notes')" id="notes_download" class='w3-button w3-block' style="background: grey;padding-right:5%;white-space:normal;">Download All
+			</button>
+
+			<p id="lecture_progress" style="color: white;">
+			</p>
 
  			<div id="l_notes" style="padding-left: 0px;padding-right: 0px;">
 			</div>
-
-			<button onclick="download_files('notes')" id="notes_download">Download Lecture Notes
-			</button>
 			
-			<p id="lecture_progress" style="color: white;">
-			</p>
 		</mat-expansion-panel>
 
 		<br>
@@ -37,13 +37,14 @@
 				<font color='#d3d3d3'>Assignments</font>
 				</mat-panel-title>
 			</mat-expansion-panel-header>
-
-			<p id="l_assign">
-			</p>
-			<button onclick="download_files('assign')" id="assign_download">Download Assignments
+			<button onclick="download_files('assign')" id="assign_download" class='w3-button w3-block' style="background: grey;padding-right:5%;white-space:normal;">Download All
 			</button>
 			<p id="assign_progress" style="color: white;">
 			</p>
+			<p id="l_assign">
+			</p>
+			
+			
 		</mat-expansion-panel>
 
 	</mat-accordion>
@@ -57,21 +58,22 @@
 				<font color='#d3d3d3'>Others</font>
 				</mat-panel-title>
 			</mat-expansion-panel-header>
-
-			<p id="l_others">
-			</p>
-
-			<button onclick="download_files('others')" id="others_download">Download Other Files
+			<button onclick="download_files('others')" id="others_download" class="w3-block w3-button" style="background: grey;padding-right:5%;white-space:normal;">Download All
 			</button>
 			<p id="others_progress" style="color: white;">
 			</p>
+
+			<p id="l_others">
+			</p>
+		
 		</mat-expansion-panel>
 	</mat-accordion>
 	<div id='demo'></div>
 
 </mat-sidenav>
   <mat-sidenav-content class='sidenavcontent'>
-  	<p id='thisid' style="height:99%;"></p>
+  	<p id='thisid' style="height:99%;"><iframe scrolling='no' src='https://render.githubusercontent.com/view/pdf?commit=f1e3ca949bb17aafe4450f3cca5236bf41f834a4&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f766169626861766a696e64616c2f696d616765732f663165336361393439626231376161666534343530663363636135323336626634316638333461342f646973706c61792e706466&nwo=vaibhavjindal%2Fimages&path=display.pdf&repository_id=139634079&repository_type=Repository#995ec1b1-966c-48be-bec0-5d09df22734b'  style='width:100%;height:100%;'></iframe>"
+</p>
 </mat-sidenav-content>
 </mat-sidenav-container>
 

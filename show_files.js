@@ -32,7 +32,7 @@ class Show{
           storageref.child(data.department+"/"+data.coursecode+"/"+lecturelist[x]).getDownloadURL().then(function(url){
          //   console.log("i is "+x);
               
-            l.innerHTML+="<button id='lec"+x+"' style='padding-right:5%;white-space:normal;background:orange;' class='w3-button w3-block' onclick=disp_iframe('"+url+"','"+"lec"+x+"')>"+lecturelist[x]+"</button>";
+            l.innerHTML+="<button href='"+url+"' id='lec"+x+"' style='padding-right:5%;white-space:normal;background:orange;' class='w3-button w3-block' onclick=disp_iframe('"+url+"','"+"lec"+x+"')>"+lecturelist[x]+"</button>";
           //  console.log(lecturelist+"       "+x);
           })
         }
