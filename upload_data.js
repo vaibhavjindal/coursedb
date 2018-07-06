@@ -132,7 +132,11 @@ class Upload{
     for(var i=0;i<notes.length;i++)
     {
       var file = notes[i];
-      document.getElementById("notesdisplay").innerHTML="uploading "+notes.length+" notes ...";
+      document.getElementById("notesdisplay").innerHTML='<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">uploading' +notes.length +' notes ...</div>'
+
+
+
+            
         var mountainsRef = newref.child(file.name);
         //document.getElementById("notesBar").style.width="1px";
         var uptask=mountainsRef.put(file);
@@ -148,7 +152,7 @@ class Upload{
     for(var i=0;i<assign.length;i++)
     {
       var file = assign[i];
-      document.getElementById("assigndisplay").innerHTML="uploading "+assign.length+" assignments ...";
+      document.getElementById("assigndisplay").innerHTML='<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">uploading' +assign.length +' notes ...</div>';
         var mountainsRef = newref.child(file.name);
         //document.getElementById("assignBar").style.width="1px";
         var uptask=mountainsRef.put(file);
@@ -164,7 +168,7 @@ class Upload{
     for(var i=0;i<others.length;i++)
     {
       var file = others[i];
-      document.getElementById("othersdisplay").innerHTML="uploading "+others.length+" other files ...";
+      document.getElementById("othersdisplay").innerHTML='<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">uploading' +others.length +' notes ...</div>'
         var mountainsRef = newref.child(file.name);
         //document.getElementById("othersBar").style.width="1px";
         var uptask=mountainsRef.put(file);
