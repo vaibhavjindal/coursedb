@@ -78,6 +78,7 @@ class Upload{
       if(insertdata.des=='Professor')
       {
         console.log("Professor Verified");
+        insertdata.upname="Professor "+insertdata.upname;
       }
       else
       {
@@ -90,6 +91,7 @@ class Upload{
       if(insertdata.des=='Student')
       {
         console.log("Student Verified");
+        insertdata.upname="Student "+insertdata.upname; 
       }
       else
       {

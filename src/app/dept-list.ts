@@ -79,7 +79,8 @@ export const DEPTS: Dept[] = [
 "AE753A-Theory Of Combustion",
 "AE754A-Turbulent Combustion",
 "AE777A-Optimal Space Flight Control",
-"ESO202A-Mechanics of Solids"
+"ESO202A-Mechanics of Solids",
+"TA101A-Introduction to Engineering Graphics"
 ] },
   
 { name: 'Biological Sciences and Bio-engineering', link: 'Biological Sciences and Bio-engineering', courses: [

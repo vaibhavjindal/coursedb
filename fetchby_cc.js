@@ -10,16 +10,16 @@ class Fetchbycc{
     document.getElementById("dep").innerHTML=dep;
     var dataref=database.ref(dep);
     dataref.once('value').then(function(snapshot){
-      console.log(snapshot);
+    //  console.log(snapshot);
       var refs=[];
       var y1718=[];
       var y1617=[];
       var y1516=[];
       var others=[];
-      console.log("Hello");
+  //    console.log("Hello");
       function recur_data(obj)
       {
-          console.log("Hi recursion");
+      //    console.log("Hi recursion");
           if(obj.key.includes(str2)){
             refs.push(obj.key);
           }
@@ -33,7 +33,7 @@ class Fetchbycc{
           }
       }
       recur_data(snapshot.node_.children_.root_);
-      console.log(snapshot.node_.children_.root_);
+    //  console.log(snapshot.node_.children_.root_);
 
       refs.sort();
       document.getElementById('course').innerHTML=course;
