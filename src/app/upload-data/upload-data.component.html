@@ -67,16 +67,19 @@
 
   <br><br>
   <label for="notes" class="mat-raised-button">Select Notes</label><h6 id="s_n1"></h6>
-  <input type="file" class="form-control-file" id="notes" name="note" multiple onchange="sd_notes()"/>
   <div id="notesdisplay"></div>
+  <input type="file" class="form-control-file" id="notes" name="note" multiple onchange="sd_notes()"/>
+  
 
   <label for="assign" class="mat-raised-button">Select Assignments</label><h6 id="s_a1"></h6>
-  <input type="file" class="form-control-file" id="assign" name="assignments" multiple onchange="sd_assignments()"/>
   <div id="assigndisplay"></div>
 
+  <input type="file" class="form-control-file" id="assign" name="assignments" multiple onchange="sd_assignments()"/>
+  
   <label for="others" class="mat-raised-button">Select Other Files</label><h6 id="s_o1"></h6>
+  <div id="othersdisplay"></div>
   <input type="file" class="form-control-file" id="others" name="other" multiple onchange="sd_others()"/>
-   <div id="othersdisplay"></div>
+   
   
   <button mat-raised-button color='primary' (click)="fun()" id='a'>Submit</button>
   <mat-card-content>
