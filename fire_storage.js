@@ -16,7 +16,7 @@ function upload_files()
       var mountainsRef = newref.child(file.name);
       mountainsRef.put(file).then(function(snapshot)
       {
-        console.log('Uploaded'+file.name);
+      //  console.log('Uploaded'+file.name);
       }).catch(function(error) {
         console.error('Upload failed:', error);
       });
@@ -27,7 +27,7 @@ function upload_files()
       var mountainsRef = newref.child(file.name);
       mountainsRef.put(file).then(function(snapshot)
       {
-        console.log('Uploaded'+file.name);
+      //  console.log('Uploaded'+file.name);
       }).catch(function(error) {
         console.error('Upload failed:', error);
       });
@@ -38,7 +38,7 @@ function upload_files()
       var mountainsRef = newref.child(file.name);
       mountainsRef.put(file).then(function(snapshot)
       {
-        console.log('Uploaded'+file.name);
+      //  console.log('Uploaded'+file.name);
       }).catch(function(error) {
         console.error('Upload failed:', error);
       });
