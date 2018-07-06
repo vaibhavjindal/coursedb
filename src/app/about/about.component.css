@@ -6,6 +6,7 @@
 #al
 {
 	text-align: center;
+	font-size: 18px;
 }
 
 h3,h2,p
@@ -36,7 +37,7 @@ h3,h2,p
 	width:60%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top:5%;
+	margin-top:4%;
 }
 /*.card{
 	width:70%;
@@ -84,11 +85,13 @@ h3,h2,p
 
 /* Add some shadows to create a card effect */
 .card {
+	border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-top: 1%;
-    opacity:0.87;
+    padding-bottom: 1%;
+    opacity:1;
 }
 
 /* Some left and right padding inside the container */
