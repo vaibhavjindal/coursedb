@@ -44,7 +44,7 @@ function send_email()
   if(domain=="iitk.ac.in")
   {
       document.getElementById("clickbut").disabled = true;
-      console.log("Access granted");
+      //console.log("Access granted");
       var actionCodeSettings = {
           'url':"https://coursedbiitk.firebaseapp.com/upload-data?user="+email+"&hash="+h, //Redirection Link
           'handleCodeInApp': true // This must be true.Dont know why.
@@ -55,22 +55,22 @@ function send_email()
          }).catch(function(error) {
            var errorCode = error.code;
            var errorMessage = error.message;
-           console.log(errCode);
-           console.log(errorMessage);
+           //console.log(errCode);
+           //console.log(errorMessage);
          });
   }
   else
   {
-    console.log("Access Denied");
+    //console.log("Access Denied");
     alert("Only a valid iitk email id can be used for verification.")
   }
 }
 function hellonikhil()
 {
-  console.log("is_signed function is called");
+//  console.log("is_signed function is called");
   var address=window.location.href;
-  console.log(address);
-  console.log(typeof(address));
+  //console.log(address);
+  //console.log(typeof(address));
   var hash_start=address.indexOf("hash");
   var hash_end=address.indexOf("&",hash_start);
   var email_start=address.indexOf("user");
@@ -78,10 +78,10 @@ function hellonikhil()
   if(hash_start == -1 || hash_end == -1 || email_start == -1 || email_end == -1)
   {
     document.write("Access Denied");
-    console.log(hash_start);
-    console.log(hash_end);
-    console.log(email_start);
-    console.log(email_end);
+  //  console.log(hash_start);
+  //  console.log(hash_end);
+  //  console.log(email_start);
+  //  console.log(email_end);
   }
   else
   {
@@ -91,14 +91,14 @@ function hellonikhil()
     var hrs=d.getHours();
     var hashstr=email+hrs;
     var hash_str=md5(hashstr);
-    console.log(email);
-    console.log(hrs);
-    console.log(hashstr);
-    console.log(hash_str);
-    console.log(hash_str_url);
+  //  console.log(email);
+    //console.log(hrs);
+    //console.log(hashstr);
+    //console.log(hash_str);
+  //  console.log(hash_str_url);
     if(hash_str_url == hash_str)
     {
-      console.log("user verified");
+    //  console.log("user verified");
     }
     else
     {
@@ -123,10 +123,10 @@ function gotData(data) {
   window.all=[];
 
     for(var dept in data){
-    
+
 
       for(code in data[dept]){
-  
+
         name = data[dept][code]['coursename']
         code=data[dept][code]['coursecode']
         temp=code+' - '+name+'  ('+dept+')';
@@ -134,10 +134,10 @@ function gotData(data) {
 
       }
     }
-    console.log(all);
+    //console.log(all);
   },
 
-   
+
 
     addkeys:function(){
       var counter=1;
@@ -150,12 +150,12 @@ function gotData(data) {
 
             break;
           }
-        } 
+        }
 
 
 
           if(counter){
-            console.log('adding values')
+        //    console.log('adding values')
 
          var opt=document.createElement('option');
           opt.appendChild(document.createTextNode(all[i]));
@@ -182,7 +182,7 @@ function get_json(){
   request.responseType='json';
   request.send();
   request.onload=function(){
-    console.log('script loaded');
+  //  console.log('script loaded');
     var DATA=request.response;
     timeset(DATA);
 
@@ -222,7 +222,7 @@ function download_files(file_type){
   // document.getElementById("info").innerHTML="Your files are Being processed . Downloading will begin shortly after.Processing may take time depending on your connection speed";
 
   newref.once('value').then(function(snap){
-      console.log(snap.val());
+  //    console.log(snap.val());
       var data=snap.val();
       var storageref=firebase.storage().ref();
       var urls=[];
@@ -276,7 +276,7 @@ function download_files(file_type){
         }
         else
         {
-          console.log("counr is     "+count);
+      //    console.log("counr is     "+count);
           setTimeout(checked, 3000)
         }
       }

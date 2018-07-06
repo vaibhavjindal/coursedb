@@ -3,13 +3,13 @@ function fetch_data(str)
   var database = firebase.database();
   var dep=str;
   var dataref=database.ref(dep);
-  console.log(dataref);
+//  console.log(dataref);
   dataref.once('value').then(function(snapshot){
-    console.log(snapshot);
+//    console.log(snapshot);
     var refs=[];
     function recur_data(obj)
     {
-        console.log("Hi recursion");
+    //    console.log("Hi recursion");
         refs.push(obj.key);
         if(obj.left.key)
         {
@@ -21,8 +21,8 @@ function fetch_data(str)
         }
     }
     recur_data(snapshot.node_.children_.root_);
-    console.log(snapshot.node_.children_.root_);
-    console.log(refs);
+  //  console.log(snapshot.node_.children_.root_);
+  //  console.log(refs);
     for (var i=0;i<refs.length;i++){
       document.getElementById("dis").innerHTML+=refs[i]+"<br>";
     }
