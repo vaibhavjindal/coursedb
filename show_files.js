@@ -7,20 +7,21 @@ class Show{
   	var course= decodeURIComponent(url.slice(dep_end+1));
   	var database = firebase.database();
   	var newref=database.ref(dep+"/"+course);
-
   	// document.getElementById("cf").innerHTML+=dep+">"+course+"<br>";
   	//document.getElementById("cf").innerHTML+=dep+">"+course+"<br>";
-  
     var l=document.getElementById("l_notes");
     var a=document.getElementById("l_assign");
     var o=document.getElementById("l_others");
-
   	newref.once('value').then(function(snap){
       //  console.log(snap.val());
         var data=snap.val();
         var lecturelist=data.notes;
         var assignlist=data.assign;
         var otherslist=data.others;
+        var new_viewcount=data.viewcount+1;
+        var updates={};
+        updates.viewcount=new_viewcount;
+        newref.update(updates);
         var storageref=firebase.storage().ref();
        // console.log(typeof(lecturelist));
        // console.log(typeof(assignlist));
@@ -31,7 +32,6 @@ class Show{
         {
           storageref.child(data.department+"/"+data.coursecode+"/"+lecturelist[x]).getDownloadURL().then(function(url){
          //   console.log("i is "+x);
-              
             l.innerHTML+="<button href='"+url+"' id='lec"+x+"' style='padding-right:5%;white-space:normal;background:orange;word-wrap:break-word;' class='w3-button w3-block' onclick=disp_iframe('"+url+"','"+"lec"+x+"')>"+lecturelist[x]+"</button>";
           //  console.log(lecturelist+"       "+x);
           })
@@ -97,5 +97,3 @@ class Show{
 
 }
 export default Show;
-
-
