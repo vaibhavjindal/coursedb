@@ -10,6 +10,7 @@ import { CourseFilesComponent } from './course-files/course-files.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ThanksComponent } from './thanks/thanks.component';
 import { ForumComponent } from './forum/forum.component';
+import { PopComponent } from './pop/pop.component';
 
 const routes: Routes = [
   { path: 'courses/:ccode', component: CoursesComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'upload-data', component: UploadDataComponent },
   { path: 'course-files/:cname', component: CourseFilesComponent },
   { path: 'thanks', component: ThanksComponent },
-  { path: 'forum', component: ForumComponent }
+  { path: 'forum', component: ForumComponent },
+  { path: 'pop', component: PopComponent }
 ];
 
 @NgModule({

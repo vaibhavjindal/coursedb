@@ -1,0 +1,21 @@
+.card{
+	opacity: 0.95;
+	border-radius: 10px;
+	max-width: 50%;
+	display: block;
+	margin-bottom: auto;
+	margin-top: 7%;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 50%;
+}
+
+ @media screen and (max-width: 768px) {
+	.card{
+		margin-top: 20%;
+		max-width: 100%;
+		display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	} 	
+}

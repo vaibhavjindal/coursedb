@@ -19,6 +19,14 @@
     background-attachment: fixed;
 }
 
+.bg-img-pop
+{
+    background-image: url('https://raw.githubusercontent.com/vaibhavjindal/images/master/image3.jpg');
+    background-position: center center;
+    background-repeat: repeat-y;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 .bg-img-about
 {
