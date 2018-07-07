@@ -286,7 +286,6 @@ function download_files(file_type){
 
 
 function disp_iframe(url,id) {
-
   color_button.style.background='orange';
   color_button.style.color='black'
   color_button=document.getElementById(id);
@@ -298,3 +297,20 @@ function disp_iframe(url,id) {
 }
 
 window.onload=function(){ window.color_button=document.getElementById('demo')}
+
+function google_form() {
+
+  var getcourse=window.location.href;
+  for(var i=0;i<4;i++){
+    var temp=getcourse.search('/');
+    getcourse=getcourse.slice(temp+1,getcourse.length);
+  }
+
+  getcourse=getcourse.replace(new RegExp('%20', 'g'), ' ');
+  getcourse=getcourse.slice(getcourse.search('@')+1,getcourse.length)
+
+  var link="https://docs.google.com/forms/d/e/1FAIpQLSe-Mgn2dT7ThpMJ157Ph3uHKGsQUj8Bs6CdLgf9u1iMzzDBew/viewform?entry.1738352817=*%7C"+getcourse+"%7C";
+
+  window.open(link, '_blank');
+
+}
