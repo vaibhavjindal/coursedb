@@ -39,6 +39,11 @@ h3,h2,p
 	margin-right: auto;
 	margin-top:4%;
 }
+
+.myimage {
+	width:30vh;
+	height: 35vh;
+}
 /*.card{
 	width:70%;
 	height:100%;
