@@ -1,6 +1,6 @@
 class Upload{
   upload_data(str1,str2,str3,str4,str5)
-  { 
+  {
     document.getElementById('err').innerHTML="";
     var database = firebase.database();
     var insertdata={};
@@ -35,13 +35,13 @@ class Upload{
     var ind=course.indexOf("-");
     insertdata.coursecode=course.slice(0,ind);
     insertdata.coursename=course.slice(ind+1,course.length);
-    
+
     insertdata.year=str3;
     if(insertdata.year=="nas")
     {
       document.getElementById("err").innerHTML="Please select the year!";
       return;
-    }    
+    }
     var temp='';
     for(var i=0;i<insertdata.year.length;i++)
     {
@@ -51,14 +51,14 @@ class Upload{
         temp+=insertdata.year[i];
     }
     insertdata.year=temp;
-    
+
     insertdata.sem=str4;
     if(insertdata.sem=="nas")
     {
       document.getElementById("err").innerHTML="Please select a semester!";
       return;
     }
-    
+
     var notes=document.getElementById("notes").files;
     var assign=document.getElementById("assign").files;
     var others=document.getElementById("others").files;
@@ -91,7 +91,7 @@ class Upload{
       if(insertdata.des=='Student')
       {
         console.log("Student Verified");
-        insertdata.upname="Student "+insertdata.upname; 
+        insertdata.upname="Student "+insertdata.upname;
       }
       else
       {
@@ -121,6 +121,7 @@ class Upload{
     insertdata.notes=n;
     insertdata.assign=a;
     insertdata.others=o;
+    insertdata.viewcount=0;
     function uploader()
     {
     var reference=insertdata.department+"/"+insertdata.coursecode+"-"+insertdata.year+"-"+insertdata.sem+"-"+insertdata.upname;
@@ -138,7 +139,7 @@ class Upload{
 
 
 
-            
+
         var mountainsRef = newref.child(file.name);
         //document.getElementById("notesBar").style.width="1px";
         var uptask=mountainsRef.put(file);

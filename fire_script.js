@@ -308,9 +308,13 @@ function google_form() {
 
   getcourse=getcourse.replace(new RegExp('%20', 'g'), ' ');
   var dept=getcourse.slice(0,getcourse.search('@'));
+<<<<<<< HEAD
   getcourse=getcourse.slice(getcourse.search('@')+1,getcourse.length)
+=======
+  getcourse=getcourse.slice(getcourse.search('@')+1,getcourse.length);
+>>>>>>> 349dc34a65576974eb9dfad8d367933d0927a99e
 
-  var link="https://docs.google.com/forms/d/e/1FAIpQLSe-Mgn2dT7ThpMJ157Ph3uHKGsQUj8Bs6CdLgf9u1iMzzDBew/viewform?entry.1738352817=*%7C"+getcourse+"%7C";
+  var link="https://docs.google.com/forms/d/e/1FAIpQLSe-Mgn2dT7ThpMJ157Ph3uHKGsQUj8Bs6CdLgf9u1iMzzDBew/viewform?usp=pp_url&entry.159652415="+dept+"&entry.1784843384="+getcourse;
 
   window.open(link, '_blank');
 

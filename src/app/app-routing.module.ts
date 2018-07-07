@@ -11,6 +11,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { ThanksComponent } from './thanks/thanks.component';
 import { ForumComponent } from './forum/forum.component';
 
+
 const routes: Routes = [
   { path: 'courses/:ccode', component: CoursesComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'upload-data', component: UploadDataComponent },
   { path: 'course-files/:cname', component: CourseFilesComponent },
   { path: 'thanks', component: ThanksComponent },
-  { path: 'forum', component: ForumComponent }
+  { path: 'forum', component: ForumComponent },
 ];
 
 @NgModule({
