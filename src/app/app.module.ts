@@ -28,7 +28,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { ForumComponent } from './forum/forum.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { PopComponent } from './pop/pop.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +42,6 @@ import { PopComponent } from './pop/pop.component';
     CoursesComponent,
     ThanksComponent,
     ForumComponent,
-    PopComponent,
   ],
   imports: [
     BrowserModule,
