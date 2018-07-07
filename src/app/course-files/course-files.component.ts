@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 
 
 /// <reference path="../../../show_files.d.ts" />
