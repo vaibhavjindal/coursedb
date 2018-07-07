@@ -307,6 +307,7 @@ function google_form() {
   }
 
   getcourse=getcourse.replace(new RegExp('%20', 'g'), ' ');
+  var dept=getcourse.slice(0,getcourse.search('@'));
   getcourse=getcourse.slice(getcourse.search('@')+1,getcourse.length)
 
   var link="https://docs.google.com/forms/d/e/1FAIpQLSe-Mgn2dT7ThpMJ157Ph3uHKGsQUj8Bs6CdLgf9u1iMzzDBew/viewform?entry.1738352817=*%7C"+getcourse+"%7C";
