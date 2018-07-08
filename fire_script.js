@@ -122,17 +122,9 @@ function gotData(data) {
     var temp;
   window.all=[];
 
-    for(var dept in data){
+    for(var mycourse in data){
+        all.push(mycourse);
 
-
-      for(code in data[dept]){
-
-        name = data[dept][code]['coursename']
-        code=data[dept][code]['coursecode']
-        temp=code+' - '+name+'  ('+dept+')';
-        all.push(temp);
-
-      }
     }
     //console.log(all);
   },
@@ -143,30 +135,11 @@ function gotData(data) {
       var counter=1;
       var searchobject=document.getElementById('data');
       for(var i=0;i<all.length;i++){
-        counter=1;
-        for(var j=0;j<searchobject.children.length;j++){
-          if(all[i]==searchobject.children[j].innerHTML){
-            counter=0;
-
-            break;
-          }
-        }
-
-
-
-          if(counter){
-        //    console.log('adding values')
-
          var opt=document.createElement('option');
           opt.appendChild(document.createTextNode(all[i]));
           document.getElementById('data').appendChild(opt);
 
-
-
-
-        }
-      }
-
+     }
 
     }
 
@@ -176,7 +149,7 @@ function gotData(data) {
 
 
 function get_json(){
-  var url="https://coursedbiitk.firebaseio.com/.json";
+  var url="https://coursedbiitk.firebaseio.com/courses.json";
   var request=new XMLHttpRequest();
   request.open('GET',url);
   request.responseType='json';
@@ -309,7 +282,6 @@ function google_form() {
   getcourse=getcourse.replace(new RegExp('%20', 'g'), ' ');
   var dept=getcourse.slice(0,getcourse.search('@'));
   getcourse=getcourse.slice(getcourse.search('@')+1,getcourse.length)
-  getcourse=getcourse.slice(getcourse.search('@')+1,getcourse.length);
 
   var link="https://docs.google.com/forms/d/e/1FAIpQLSe-Mgn2dT7ThpMJ157Ph3uHKGsQUj8Bs6CdLgf9u1iMzzDBew/viewform?usp=pp_url&entry.159652415="+dept+"&entry.1784843384="+getcourse;
 

@@ -122,8 +122,23 @@ class Upload{
     insertdata.assign=a;
     insertdata.others=o;
     insertdata.viewcount=0;
+
+
+
     function uploader()
-    {
+    { 
+      var search_course={}
+      var search_entry=str2+'  ('+str1+')';
+      var temp_search=search_entry.indexOf('-');
+      search_entry=search_entry.slice(0,temp_search)+' '+search_entry.slice(temp_search,temp_search+1)+' '+search_entry.slice(temp_search+1,search_entry.length);
+      search_course['1']='1';
+      var search_storage=database.ref('courses/'+search_entry);
+      search_storage.set(search_course);
+
+
+
+
+
     var reference=insertdata.department+"/"+insertdata.coursecode+"-"+insertdata.year+"-"+insertdata.sem+"-"+insertdata.upname;
     var storageref = database.ref(reference);
     storageref.set(insertdata);
