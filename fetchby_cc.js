@@ -98,7 +98,7 @@ class Fetchbycc{
     if(y1516.length>0){
       document.getElementById("fetchbycc").innerHTML+='<br><h3>2015-2016</h3>';
       for (var i=0;i<y1516.length;i++){
-        if(y1518[i]==course_ref)
+        if(y1516[i]==course_ref)
         {
           document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1516[i]+'" data-toggle="tooltip" title="Most Viewed Course" style="color:#2200CC;><h5><i class="fa fa-trophy" aria-hidden="true"></i>&nbsp'+y1516[i]+'</h5></a>';
         }

@@ -1,0 +1,53 @@
+[debug] [2018-07-10T23:39:58.411Z] ----------------------------------------------------------------------
+[debug] [2018-07-10T23:39:58.413Z] Command:       /usr/bin/node /usr/bin/firebase deploy
+[debug] [2018-07-10T23:39:58.413Z] CLI Version:   3.18.6
+[debug] [2018-07-10T23:39:58.413Z] Platform:      linux
+[debug] [2018-07-10T23:39:58.413Z] Node Version:  v10.3.0
+[debug] [2018-07-10T23:39:58.413Z] Time:          Wed Jul 11 2018 05:09:58 GMT+0530 (IST)
+[debug] [2018-07-10T23:39:58.413Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-10T23:39:58.421Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-10T23:39:58.422Z] > authorizing via signed-in user
+[debug] [2018-07-10T23:39:58.423Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-10T23:39:58.424Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/f6wPv3vyEhzJdu_YH0Ao6u4pzTmKdPN_lzB7v3gbFlo',
+  client_id:
+   '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope:
+   'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Wed Jul 11 2018 05:09:58 GMT+0530 (IST)
+[debug] [2018-07-10T23:39:58.721Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T23:39:58.777Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/coursedbiitk  
+  
+ Wed Jul 11 2018 05:09:58 GMT+0530 (IST)
+[debug] [2018-07-10T23:40:01.684Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T23:40:01.685Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/coursedbiitk/tokens  
+  
+ Wed Jul 11 2018 05:10:01 GMT+0530 (IST)
+[debug] [2018-07-10T23:40:02.736Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'coursedbiitk'...
+[info] 
+[info] i  deploying database, storage, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-07-10T23:40:04.485Z] >>> HTTP REQUEST PUT https://coursedbiitk.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+ 
+ Wed Jul 11 2018 05:10:04 GMT+0530 (IST)
+[debug] [2018-07-10T23:40:06.120Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax for database coursedbiitk is valid
+[debug] [2018-07-10T23:40:06.121Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/coursedbiitk  
+  
+ Wed Jul 11 2018 05:10:06 GMT+0530 (IST)
+[debug] [2018-07-10T23:40:08.420Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-07-10T23:40:08.422Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/coursedbiitk:test  
+ { source: { files: [ [Object] ] } } 
+ Wed Jul 11 2018 05:10:08 GMT+0530 (IST)
