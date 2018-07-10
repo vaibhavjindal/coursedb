@@ -86,11 +86,12 @@ class Fetchbycc{
       document.getElementById("fetchbycc").innerHTML+='<br><h3>2016-2017</h3>';
       for (var i=0;i<y1617.length;i++){
         if(y1617[i]==course_ref){
-          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1617[i]+'" data-toggle="tooltip" title="Most Viewed Course" style="color:#2200CC;><h5><i class="fa fa-trophy" aria-hidden="true"></i>&nbsp'+y1617[i]+'</h5></a>';
+          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1617[i]+'" data-toggle="tooltip" title="Most Viewed Course" style="color:#2200CC;"><h5><i class="fa fa-trophy" aria-hidden="true"></i>&nbsp'+y1617[i]+'</h5></a>';
         }
         else
         {
         document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1617[i]+'" style="color:#2200CC;"><h5>'+y1617[i]+'</h5></a>';
+
       }}
     }
 
