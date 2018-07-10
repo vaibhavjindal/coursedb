@@ -73,11 +73,12 @@ class Fetchbycc{
       for (var i=0;i<y1718.length;i++){
         if(y1718[i]==course_ref)
         {
-          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1718[i]+'"><h5><b>'+y1718[i]+'</b></h5></a>';
+          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1718[i]+'" data-toggle="tooltip" title="Most Viewed Course" style="color:#2200CC;"><h5><i class="fa fa-trophy" aria-hidden="true"></i>&nbsp'+y1718[i]+'</h5></a>';
+
         }
         else
         {
-        document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1718[i]+'"><h5>'+y1718[i]+'</h5></a>';
+        document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1718[i]+'" style="color:#2200CC;"><h5>'+y1718[i]+'</h5></a>';
       }}
     }
 
@@ -85,11 +86,11 @@ class Fetchbycc{
       document.getElementById("fetchbycc").innerHTML+='<br><h3>2016-2017</h3>';
       for (var i=0;i<y1617.length;i++){
         if(y1617[i]==course_ref){
-          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1617[i]+'"><h5><b>'+y1617[i]+'</b></h5></a>';
+          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1617[i]+'" data-toggle="tooltip" title="Most Viewed Course" style="color:#2200CC;><h5><i class="fa fa-trophy" aria-hidden="true"></i>&nbsp'+y1617[i]+'</h5></a>';
         }
         else
         {
-        document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1617[i]+'"><h5>'+y1617[i]+'</h5></a>';
+        document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1617[i]+'" style="color:#2200CC;"><h5>'+y1617[i]+'</h5></a>';
       }}
     }
 
@@ -98,11 +99,11 @@ class Fetchbycc{
       for (var i=0;i<y1516.length;i++){
         if(y1518[i]==course_ref)
         {
-          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1516[i]+'"><h5><b>'+y1516[i]+'</b></h5></a>';
+          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1516[i]+'" data-toggle="tooltip" title="Most Viewed Course" style="color:#2200CC;><h5><i class="fa fa-trophy" aria-hidden="true"></i>&nbsp'+y1516[i]+'</h5></a>';
         }
         else
         {
-          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1516[i]+'"><h5>'+y1516[i]+'</h5></a>';
+          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+y1516[i]+'" style="color:#2200CC;"><h5>'+y1516[i]+'</h5></a>';
       }}
     }
 
@@ -111,14 +112,17 @@ class Fetchbycc{
       for (var i=0;i<others.length;i++){
         if(others[i].length)
         {
-          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+others[i]+'"><h5><b>'+others[i]+'</b></h5></a>';
+          document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+others[i]+'" data-toggle="tooltip" title="Most Viewed Course" style="color:#2200CC;><h5><i class="fa fa-trophy" aria-hidden="true"></i>&nbsp'+others[i]+'</h5></a>';
         }
         else
         {
-        document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+others[i]+'"><h5>'+others[i]+'</h5></a>';
+        document.getElementById("fetchbycc").innerHTML+='<a href="http://coursedbiitk.firebaseapp.com/course-files/'+dep+'@'+others[i]+'" style="color:#2200CC;"><h5>'+others[i]+'</h5></a>';
       }}
     }
     })
-  }
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+}
 }
 export default Fetchbycc;

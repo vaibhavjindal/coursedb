@@ -126,7 +126,7 @@ function gotData(data) {
         all.push(mycourse);
 
     }
-    //console.log(all);
+    console.log(all);
   },
 
 
