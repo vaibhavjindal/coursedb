@@ -87,6 +87,9 @@ function hellonikhil()
   {
     var hash_str_url=address.slice(hash_start+5,hash_end);
     var email=address.slice(email_start+5,email_end);
+    var domai=email.split("@")[1];
+    if(domai=="iitk.ac.in")
+    {
     var d = new Date();
     var hrs=d.getHours();
     var hashstr=email+hrs;
@@ -104,6 +107,10 @@ function hellonikhil()
     {
       document.write("Access Denied");
     }
+  }
+  else {
+    document.write("Access Denied");
+  }
   }
 }
 
