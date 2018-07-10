@@ -87,16 +87,21 @@ function hellonikhil()
   {
     var hash_str_url=address.slice(hash_start+5,hash_end);
     var email=address.slice(email_start+5,email_end);
+    var domai=email.split("@")[1];
+    if(domai=="iitk.ac.in")
+    {
     var d = new Date();
     var hrs=d.getHours();
-    var hashstr=email+hrs;
-    var hash_str=md5(hashstr);
+    var hashstr1=email+hrs;
+    var hash_str1=md5(hashstr1);
+    var hashstr2=email+(hrs-1);
+    var hash_str2=md5(hashstr2);
   //  console.log(email);
     //console.log(hrs);
     //console.log(hashstr);
     //console.log(hash_str);
   //  console.log(hash_str_url);
-    if(hash_str_url == hash_str)
+    if(hash_str_url == hash_str1 || hash_str_url == hash_str2)
     {
     //  console.log("user verified");
     }
@@ -104,6 +109,10 @@ function hellonikhil()
     {
       document.write("Access Denied");
     }
+  }
+  else {
+    document.write("Access Denied");
+  }
   }
 }
 

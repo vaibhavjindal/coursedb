@@ -25,7 +25,6 @@ class Upload{
       document.getElementById("err").innerHTML="Please select a department!";
       return;
     }
-
     var course=str2;
     if(course=="nas"){
       document.getElementById("err").innerHTML="Please select a course!";
@@ -58,7 +57,11 @@ class Upload{
       document.getElementById("err").innerHTML="Please select a semester!";
       return;
     }
-
+    var address=window.location.href;
+    var email_start=address.indexOf("user");
+    var email_end=address.indexOf("&",email_start);
+    var email=address.slice(email_start+5,email_end);
+    insertdata.email=email;
     var notes=document.getElementById("notes").files;
     var assign=document.getElementById("assign").files;
     var others=document.getElementById("others").files;
@@ -126,7 +129,7 @@ class Upload{
 
 
     function uploader()
-    { 
+    {
       var search_course={}
       var search_entry=str2+'  ('+str1+')';
       var temp_search=search_entry.indexOf('-');
