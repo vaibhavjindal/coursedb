@@ -1,11 +1,6 @@
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyBlnIx5UZcA3aNCwI0GjtSQOgvFDHgdnJQ",
-  authDomain: "coursedbiitk.firebaseapp.com",
-  databaseURL: "https://coursedbiitk.firebaseio.com",
-  projectId: "coursedbiitk",
-  storageBucket: "coursedbiitk.appspot.com",
-  messagingSenderId: "227597663485"
+//firebase keys and other secret data
 };
 firebase.initializeApp(config);
 
